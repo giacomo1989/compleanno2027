@@ -4,6 +4,75 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#061326"><title>Giacomo’s Birthday · 2027</title>
 <link rel="stylesheet" href="style.css">
+
+<style id="qc-house-fixed-background">
+/* ONLY Bormio > Come arrivare & Hotel */
+#hotelPage.hotel-page{
+  background:
+    linear-gradient(180deg,rgba(3,12,27,.20) 0%,rgba(3,12,27,.38) 35%,rgba(3,12,27,.58) 100%),
+    url("images/qc-house-exterior.jpeg") center center / cover no-repeat fixed !important;
+  background-attachment: fixed !important;
+  color:#fff;
+}
+
+/* Hero no longer owns a separate image: it reveals the same continuous background */
+#hotelPage .hotel-hero{
+  background:transparent !important;
+}
+#hotelPage .hotel-hero-shade{
+  background:linear-gradient(180deg,rgba(2,10,25,.10),rgba(2,10,25,.18) 48%,rgba(2,10,25,.34) 100%) !important;
+}
+
+/* Glass panels over the continuous snowy background */
+#hotelPage .hotel-card,
+#hotelPage .arrival-section{
+  background:rgba(5,17,32,.66);
+  border:1px solid rgba(255,255,255,.17);
+  border-radius:24px;
+  padding:22px;
+  margin-bottom:18px;
+  -webkit-backdrop-filter:blur(14px);
+  backdrop-filter:blur(14px);
+  box-shadow:0 18px 48px rgba(0,0,0,.22);
+}
+#hotelPage .arrival-section{border-top:1px solid rgba(255,255,255,.17)}
+#hotelPage .stay-grid>div,
+#hotelPage .airport{
+  background:rgba(4,15,29,.58);
+  -webkit-backdrop-filter:blur(8px);
+  backdrop-filter:blur(8px);
+}
+#hotelPage .airport.active{
+  background:rgba(255,210,138,.16);
+}
+
+/* iOS/Safari can ignore fixed attachment in some configurations.
+   This fixed pseudo-layer preserves the same visual behavior. */
+#hotelPage::before{
+  content:"";
+  position:fixed;
+  z-index:-2;
+  inset:0;
+  background:
+    linear-gradient(180deg,rgba(3,12,27,.20),rgba(3,12,27,.40) 42%,rgba(3,12,27,.60)),
+    url("images/qc-house-exterior.jpeg") center center / cover no-repeat;
+}
+#hotelPage::after{
+  content:"";
+  position:fixed;
+  z-index:-1;
+  inset:0;
+  background:rgba(3,10,22,.08);
+  pointer-events:none;
+}
+#hotelPage{isolation:isolate}
+
+@media(max-width:650px){
+  #hotelPage.hotel-page{background-attachment:scroll !important;background-image:none !important}
+  #hotelPage .hotel-card,#hotelPage .arrival-section{padding:17px;border-radius:20px}
+}
+</style>
+
 </head>
 <body>
 <div id="app">
@@ -58,6 +127,80 @@
   <header class="plainbar"><button onclick="backDestination()">←</button><span id="placeCity"></span></header>
   <main><div class="smallcap">GIACOMO’S BIRTHDAY · 2027</div><h2 id="placeTitle"></h2><p>Questa sezione è pronta per essere riempita con programma, indirizzi, link, mappe e informazioni del viaggio.</p><div class="empty-card">Contenuti da inserire</div></main>
 </section>
+
+<section id="hotelPage" class="screen hotel-page hidden">
+  <div class="hotel-hero">
+    <div class="hotel-hero-shade"></div>
+    <header class="topbar hotel-topbar"><button onclick="closeHotel()">←</button><div class="live-pill"><span></span> LIVE</div></header>
+    <div class="hotel-hero-title"><div class="smallcap">BORMIO · 02—05 FEBBRAIO 2027</div><h2>Come arrivare<br>& Hotel</h2></div>
+  </div>
+  <main class="hotel-content">
+    <section class="hotel-card">
+      <div class="smallcap">IL NOSTRO HOTEL</div><h3>🏨 QC HOUSE</h3>
+      <p class="address">Via Freita, 7 · Santa Caterina Valfurva (SO)</p>
+      <img src="images/qc-house-interior.jpeg" alt="Interno QC House" class="hotel-photo">
+      <div class="stay-grid">
+        <div><small>CHECK-IN</small><b>2 FEBBRAIO 2027</b><span>15:00</span></div>
+        <div><small>CHECK-OUT</small><b>5 FEBBRAIO 2027</b><span>entro le 10:00</span></div>
+      </div>
+      <div class="section-label">POSIZIONE</div>
+      <div class="map-wrap"><iframe title="QC House su Google Maps" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Via%20Freita%207%20Santa%20Caterina%20Valfurva%20SO&output=embed"></iframe></div>
+      <a class="primary-link" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Via%20Freita%207%2C%20Santa%20Caterina%20Valfurva%20SO">📍 APRI IN GOOGLE MAPS ↗</a>
+    </section>
+
+    <section class="arrival-section">
+      <div class="smallcap">COME ARRIVARE</div><h3>Scegli il tuo aeroporto</h3>
+      <p class="muted">Seleziona il punto di partenza per visualizzare il percorso verso QC House.</p>
+      <div class="airport-grid">
+        <button class="airport active" data-origin="Venezia Marco Polo Airport" onclick="selectAirport(this)"><span>✈️</span><b>Venezia Marco Polo</b><small>VCE</small></button>
+        <button class="airport" data-origin="Milan Malpensa Airport" onclick="selectAirport(this)"><span>✈️</span><b>Milano Malpensa</b><small>MXP</small></button>
+        <button class="airport" data-origin="Orio al Serio International Airport" onclick="selectAirport(this)"><span>✈️</span><b>Orio al Serio</b><small>BGY</small></button>
+      </div>
+      <div class="route-title"><span id="routeOrigin">Venezia Marco Polo</span><i>→</i><span>QC House</span></div>
+      <div class="map-wrap route-map"><iframe id="routeMap" title="Percorso verso QC House" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+      <a id="routeLink" class="primary-link" target="_blank" rel="noopener">🚗 APRI PERCORSO IN GOOGLE MAPS ↗</a>
+    </section>
+  </main>
+</section>
+
 </div>
 <script src="app.js"></script>
+
+<script>
+/* Route-map upgrade: show the actual driving route inside the embedded map. */
+(function () {
+  const destination = "Via Freita 7, Santa Caterina Valfurva SO";
+
+  window.selectAirport = function(btn) {
+    document.querySelectorAll(".airport").forEach(x => x.classList.remove("active"));
+    btn.classList.add("active");
+
+    const origin = btn.dataset.origin;
+    const label = btn.querySelector("b").textContent;
+    document.getElementById("routeOrigin").textContent = label;
+
+    const routeMap = document.getElementById("routeMap");
+    const routeLink = document.getElementById("routeLink");
+
+    /* Google Maps directions embed: origin + destination + driving route */
+    routeMap.src =
+      "https://www.google.com/maps?output=embed" +
+      "&saddr=" + encodeURIComponent(origin) +
+      "&daddr=" + encodeURIComponent(destination) +
+      "&dirflg=d";
+
+    routeLink.href =
+      "https://www.google.com/maps/dir/?api=1" +
+      "&origin=" + encodeURIComponent(origin) +
+      "&destination=" + encodeURIComponent(destination) +
+      "&travelmode=driving";
+  };
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const selected = document.querySelector(".airport.active");
+    if (selected) window.selectAirport(selected);
+  });
+})();
+</script>
+
 </body></html>
