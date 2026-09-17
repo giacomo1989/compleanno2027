@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#061326"><title>Giacomo’s Birthday · 2027</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+<section id="home" class="screen home-screen">
+  <div class="home-shade"></div>
+  <main class="home-content">
+    <div class="kicker">BORMIO · VENEZIA · 2027</div>
+    <h1>Giacomo’s<br>Birthday</h1>
+    <div class="script">Good friends.<br>Better places.</div>
+
+    <div class="glass countdown-box">
+      <div class="label">MANCANO</div>
+      <div id="countdown" class="countdown"></div>
+      <div class="until">ALL’INIZIO DELL’AVVENTURA<br><b>2 FEBBRAIO 2027 · ORE 15:00</b></div>
+    </div>
+
+    <div id="liveHome" class="glass live-home">
+      <div><span class="live-dot"></span><b> LIVE · PROGRAMMA DI OGGI</b></div>
+      <span id="liveText">Il viaggio non è ancora iniziato.</span>
+    </div>
+
+    <div class="choose">SCEGLI LA DESTINAZIONE</div>
+    <div class="destination-grid">
+      <button class="destination-card bormio-card" onclick="openDestination('bormio')">
+        <div><strong>BORMIO</strong><span>02 — 05 FEB</span></div><i>→</i>
+      </button>
+      <button class="destination-card venezia-card" onclick="openDestination('venezia')">
+        <div><strong>VENEZIA</strong><span>05 — 09 FEB</span></div><i>→</i>
+      </button>
+    </div>
+  </main>
+</section>
+
+<section id="destination" class="screen destination-screen hidden">
+  <div id="destinationBg" class="destination-bg"></div>
+  <div class="destination-overlay"></div>
+  <header class="topbar">
+    <button onclick="goHome()" aria-label="Indietro">←</button>
+    <div class="live-pill"><span></span> LIVE</div>
+  </header>
+  <main class="destination-content">
+    <div class="destination-heading">
+      <h2 id="destinationTitle"></h2>
+      <p id="destinationDates"></p>
+      <div id="destinationChapter" class="chapter"></div>
+    </div>
+    <div id="menuGrid" class="menu-grid"></div>
+  </main>
+</section>
+
+<section id="placeholder" class="screen placeholder hidden">
+  <header class="plainbar"><button onclick="backDestination()">←</button><span id="placeCity"></span></header>
+  <main><div class="smallcap">GIACOMO’S BIRTHDAY · 2027</div><h2 id="placeTitle"></h2><p>Questa sezione è pronta per essere riempita con programma, indirizzi, link, mappe e informazioni del viaggio.</p><div class="empty-card">Contenuti da inserire</div></main>
+</section>
+</div>
+<script src="app.js"></script>
+</body></html>
