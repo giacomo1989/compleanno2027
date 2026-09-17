@@ -1,1 +1,11 @@
-const start=new Date("2027-02-02T15:00:00");function tick(){let e=document.querySelector(".countgrid");if(!e)return;let x=start-new Date();if(x>0){let d=Math.floor(x/864e5);x%=864e5;let h=Math.floor(x/36e5);x%=36e5;let m=Math.floor(x/6e4),s=Math.floor((x%6e4)/1000);e.innerHTML=[[d,"D"],[h,"H"],[m,"M"],[s,"S"]].map(v=>`<div><b>${String(v[0]).padStart(2,"0")}</b><span>${v[1]}</span></div>`).join("")}else e.innerHTML="<div style='grid-column:1/-1'><b>LIVE</b></div>"}tick();setInterval(tick,1000);
+const start=new Date("2027-02-02T15:00:00");
+function tick(){let e=document.querySelector(".countgrid");
+if(!e)return;
+let x=start-new Date();
+if(x>0){let d=Math.floor(x/864e5);
+x%=864e5;
+let h=Math.floor(x/36e5);
+x%=36e5;
+let m=Math.floor(x/6e4),s=Math.floor((x%6e4)/1000);
+e.innerHTML=[[d,"D"],[h,"H"],[m,"M"],[s,"S"]].map(v=>`<div><b>${String(v[0]).padStart(2,"0")}</b><span>${v[1]}</span></div>`).join("")}else e.innerHTML="<div style='grid-column:1/-1'><b>LIVE</b></div>"}tick();
+setInterval(tick,1000);
