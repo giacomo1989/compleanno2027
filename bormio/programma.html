@@ -1,34 +1,208 @@
 <!DOCTYPE html>
-<html>
- <head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width,initial-scale=1" name="viewport"/>
-  <link href="../css/style.css" rel="stylesheet"/>
- </head>
- <body data-root="..">
-  <div class="lang">
-   <button data-lang="it" onclick="setLanguage('it')">
-    IT
-   </button>
-   <button data-lang="es" onclick="setLanguage('es')">
-    ES
-   </button>
-  </div>
-  <section class="placeholder">
-   <main>
-    <a class="back" href="index.html">
-     &larr;
-    </a>
-    <div class="smallcap">
-     BORMIO
+<html lang="it">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Programma · Bormio</title>
+    <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/programma.css" rel="stylesheet">
+</head>
+
+<body data-root="..">
+
+    <div class="lang">
+        <button data-lang="it" onclick="setLanguage('it')">IT</button>
+        <button data-lang="es" onclick="setLanguage('es')">ES</button>
     </div>
-    <h2 data-i18n="common.program">
-    </h2>
-    <div class="panel" data-i18n="placeholder">
-    </div>
-   </main>
-  </section>
-  <script src="../js/i18n.js">
-  </script>
- </body>
+
+    <section class="program-page">
+
+        <header class="top">
+            <a class="back" href="index.html">←</a>
+        </header>
+
+        <main class="program-main">
+
+            <!-- =========================
+                 HEADER
+            ========================== -->
+            <section class="program-hero">
+                <div class="smallcap">BORMIO · 02—05 FEBBRAIO 2027</div>
+                <h1 data-i18n="program.title"></h1>
+                <p class="program-note" data-i18n="program.note"></p>
+            </section>
+
+            <!-- =========================
+                 02 FEBBRAIO
+            ========================== -->
+            <section class="day-card">
+                <div class="day-heading">
+                    <div>
+                        <span class="day-number">02</span>
+                        <span class="day-month" data-i18n="program.february"></span>
+                    </div>
+                    <span class="day-label" data-i18n="program.day2.label"></span>
+                </div>
+
+                <div class="timeline">
+                    <div class="event">
+                        <time>18:00</time>
+                        <div class="event-dot"></div>
+                        <div class="event-content">
+                            <span class="event-icon">🥂</span>
+                            <strong data-i18n="program.aperitivo"></strong>
+                        </div>
+                    </div>
+
+                    <div class="event">
+                        <time>21:00</time>
+                        <div class="event-dot"></div>
+                        <div class="event-content">
+                            <span class="event-icon">🍽️</span>
+                            <strong data-i18n="program.dinner"></strong>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- =========================
+                 03 FEBBRAIO
+            ========================== -->
+            <section class="day-card">
+                <div class="day-heading">
+                    <div>
+                        <span class="day-number">03</span>
+                        <span class="day-month" data-i18n="program.february"></span>
+                    </div>
+                    <span class="day-label" data-i18n="program.skiDay"></span>
+                </div>
+
+                <div class="timeline">
+                    <div class="event">
+                        <time>09:00</time>
+                        <div class="event-dot"></div>
+                        <div class="event-content">
+                            <span class="event-icon">⛷️</span>
+                            <strong data-i18n="program.ski"></strong>
+                        </div>
+                    </div>
+
+                    <div class="event">
+                        <time>14:00</time>
+                        <div class="event-dot"></div>
+                        <div class="event-content">
+                            <span class="event-icon">🏔️</span>
+                            <strong data-i18n="program.hutLunch"></strong>
+                        </div>
+                    </div>
+
+                    <div class="event">
+                        <time>18:00</time>
+                        <div class="event-dot"></div>
+                        <div class="event-content">
+                            <span class="event-icon">🥂</span>
+                            <strong data-i18n="program.aperitivo"></strong>
+                        </div>
+                    </div>
+
+                    <div class="event">
+                        <time>21:00</time>
+                        <div class="event-dot"></div>
+                        <div class="event-content">
+                            <span class="event-icon">🍽️</span>
+                            <strong data-i18n="program.dinner"></strong>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- =========================
+                 04 FEBBRAIO
+            ========================== -->
+            <section class="day-card">
+                <div class="day-heading">
+                    <div>
+                        <span class="day-number">04</span>
+                        <span class="day-month" data-i18n="program.february"></span>
+                    </div>
+                    <span class="day-label" data-i18n="program.skiDay"></span>
+                </div>
+
+                <div class="timeline">
+                    <div class="event">
+                        <time>09:00</time>
+                        <div class="event-dot"></div>
+                        <div class="event-content">
+                            <span class="event-icon">⛷️</span>
+                            <strong data-i18n="program.ski"></strong>
+                        </div>
+                    </div>
+
+                    <div class="event">
+                        <time>14:00</time>
+                        <div class="event-dot"></div>
+                        <div class="event-content">
+                            <span class="event-icon">🏔️</span>
+                            <strong data-i18n="program.hutLunch"></strong>
+                        </div>
+                    </div>
+
+                    <div class="event">
+                        <time>18:00</time>
+                        <div class="event-dot"></div>
+                        <div class="event-content">
+                            <span class="event-icon">🥂</span>
+                            <strong data-i18n="program.aperitivo"></strong>
+                        </div>
+                    </div>
+
+                    <div class="event">
+                        <time>21:00</time>
+                        <div class="event-dot"></div>
+                        <div class="event-content">
+                            <span class="event-icon">🍽️</span>
+                            <strong data-i18n="program.dinner"></strong>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- =========================
+                 05 FEBBRAIO
+            ========================== -->
+            <section class="day-card">
+                <div class="day-heading">
+                    <div>
+                        <span class="day-number">05</span>
+                        <span class="day-month" data-i18n="program.february"></span>
+                    </div>
+                    <span class="day-label" data-i18n="program.day5.label"></span>
+                </div>
+
+                <div class="timeline">
+                    <div class="event">
+                        <time>10:00</time>
+                        <div class="event-dot"></div>
+                        <div class="event-content">
+                            <span class="event-icon">🧳</span>
+                            <strong data-i18n="program.checkout"></strong>
+                        </div>
+                    </div>
+
+                    <div class="event">
+                        <time>→</time>
+                        <div class="event-dot"></div>
+                        <div class="event-content">
+                            <span class="event-icon">🚗</span>
+                            <strong data-i18n="program.veniceDeparture"></strong>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </section>
+
+    <script src="../js/i18n.js"></script>
+</body>
 </html>

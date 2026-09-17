@@ -25,5 +25,17 @@
     "hotel.arrive": "COME ARRIVARE",
     "hotel.choose": "Scegli il tuo aeroporto",
     "hotel.route": "🚗 APRI PERCORSO IN GOOGLE MAPS ↗",
-    "placeholder": "Contenuti da inserire"
+    "placeholder": "Contenuti da inserire",
+    "program.title": "Programma",
+    "program.note": "PROGRAMMA INDICATIVO · Gli orari e le attività potranno essere aggiornati.",
+    "program.february": "FEBBRAIO",
+    "program.day2.label": "Arrival Day",
+    "program.skiDay": "Ski Day",
+    "program.day5.label": "Venice Bound",
+    "program.aperitivo": "Aperitivo",
+    "program.dinner": "Cena",
+    "program.ski": "Sci",
+    "program.hutLunch": "Pranzo in baita",
+    "program.checkout": "Check-out",
+    "program.veniceDeparture": "Partenza per Venezia"
 }
