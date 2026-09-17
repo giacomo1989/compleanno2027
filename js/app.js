@@ -1,11 +1,80 @@
-const start=new Date("2027-02-02T15:00:00");
-function tick(){let e=document.querySelector(".countgrid");
-if(!e)return;
-let x=start-new Date();
-if(x>0){let d=Math.floor(x/864e5);
-x%=864e5;
-let h=Math.floor(x/36e5);
-x%=36e5;
-let m=Math.floor(x/6e4),s=Math.floor((x%6e4)/1000);
-e.innerHTML=[[d,"D"],[h,"H"],[m,"M"],[s,"S"]].map(v=>`<div><b>${String(v[0]).padStart(2,"0")}</b><span>${v[1]}</span></div>`).join("")}else e.innerHTML="<div style='grid-column:1/-1'><b>LIVE</b></div>"}tick();
-setInterval(tick,1000);
+const tripStart = new Date("2027-02-02T15:00:00");
+const tripEnd = new Date("2027-02-09T18:00:00");
+
+function localDateKey(date = new Date()) {
+    const y = date.getFullYear();
+    const m = String(date.getMonth() + 1).padStart(2, "0");
+    const d = String(date.getDate()).padStart(2, "0");
+    return `${y}-${m}-${d}`;
+}
+
+function updateCountdown() {
+    const element = document.querySelector(".countgrid");
+    if (!element) return;
+
+    const now = new Date();
+
+    if (now < tripStart) {
+        let remaining = tripStart - now;
+        const days = Math.floor(remaining / 86400000);
+        remaining %= 86400000;
+        const hours = Math.floor(remaining / 3600000);
+        remaining %= 3600000;
+        const minutes = Math.floor(remaining / 60000);
+        const seconds = Math.floor((remaining % 60000) / 1000);
+
+        element.innerHTML = [
+            [days, "D"],
+            [hours, "H"],
+            [minutes, "M"],
+            [seconds, "S"]
+        ].map(value => `
+            <div>
+                <b>${String(value[0]).padStart(2, "0")}</b>
+                <span>${value[1]}</span>
+            </div>
+        `).join("");
+    } else if (now <= tripEnd) {
+        element.innerHTML = '<div style="grid-column:1/-1"><b>LIVE</b></div>';
+    } else {
+        element.innerHTML = '<div style="grid-column:1/-1"><b>🥂</b></div>';
+    }
+}
+
+async function renderLive() {
+    const live = document.querySelector(".live");
+    if (!live) return;
+
+    const lang = localStorage.getItem("gb_lang") || "it";
+    const [programResponse, translationResponse] = await Promise.all([
+        fetch("data/programma.json"),
+        fetch(`lang/${lang}.json`)
+    ]);
+
+    const program = await programResponse.json();
+    const translations = await translationResponse.json();
+    const today = localDateKey();
+
+    const events = program.bormio?.[today] || [];
+
+    if (!events.length) {
+        live.innerHTML = `<div class="smallcap">${translations["live.today"] || "LIVE"}</div>`;
+        return;
+    }
+
+    live.innerHTML = `
+        <div class="smallcap">${translations["live.today"] || "LIVE"}</div>
+        <div class="live-events">
+            ${events.map(event => `
+                <div class="live-event">
+                    <b>${event.displayTime || event.time}</b>
+                    <span>${event.icon || ""} ${translations[event.key] || event.key}</span>
+                </div>
+            `).join("")}
+        </div>
+    `;
+}
+
+updateCountdown();
+setInterval(updateCountdown, 1000);
+document.addEventListener("DOMContentLoaded", renderLive);

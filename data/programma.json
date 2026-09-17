@@ -1,0 +1,95 @@
+{
+    "bormio": {
+        "2026-09-18": [
+            {
+                "time": "09:00",
+                "icon": "⛷️",
+                "key": "program.ski"
+            },
+            {
+                "time": "14:00",
+                "icon": "🏔️",
+                "key": "program.hutLunch"
+            },
+            {
+                "time": "18:00",
+                "icon": "🥂",
+                "key": "program.aperitivo"
+            },
+            {
+                "time": "21:00",
+                "icon": "🍽️",
+                "key": "program.dinner"
+            }
+        ],
+        "2027-02-02": [
+            {
+                "time": "18:00",
+                "icon": "🥂",
+                "key": "program.aperitivo"
+            },
+            {
+                "time": "21:00",
+                "icon": "🍽️",
+                "key": "program.dinner"
+            }
+        ],
+        "2027-02-03": [
+            {
+                "time": "09:00",
+                "icon": "⛷️",
+                "key": "program.ski"
+            },
+            {
+                "time": "14:00",
+                "icon": "🏔️",
+                "key": "program.hutLunch"
+            },
+            {
+                "time": "18:00",
+                "icon": "🥂",
+                "key": "program.aperitivo"
+            },
+            {
+                "time": "21:00",
+                "icon": "🍽️",
+                "key": "program.dinner"
+            }
+        ],
+        "2027-02-04": [
+            {
+                "time": "09:00",
+                "icon": "⛷️",
+                "key": "program.ski"
+            },
+            {
+                "time": "14:00",
+                "icon": "🏔️",
+                "key": "program.hutLunch"
+            },
+            {
+                "time": "18:00",
+                "icon": "🥂",
+                "key": "program.aperitivo"
+            },
+            {
+                "time": "21:00",
+                "icon": "🍽️",
+                "key": "program.dinner"
+            }
+        ],
+        "2027-02-05": [
+            {
+                "time": "10:00",
+                "icon": "🧳",
+                "key": "program.checkout"
+            },
+            {
+                "time": "10:15",
+                "displayTime": "→",
+                "icon": "🚗",
+                "key": "program.veniceDeparture"
+            }
+        ]
+    }
+}

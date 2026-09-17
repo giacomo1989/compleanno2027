@@ -37,5 +37,7 @@
     "program.ski": "Esquí",
     "program.hutLunch": "Almuerzo en refugio",
     "program.checkout": "Check-out",
-    "program.veniceDeparture": "Salida hacia Venecia"
+    "program.veniceDeparture": "Salida hacia Venecia",
+    "live.today": "LIVE · PROGRAMA DE HOY",
+    "live.noEvents": "No hay eventos programados para hoy."
 }
