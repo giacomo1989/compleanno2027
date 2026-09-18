@@ -1,0 +1,42 @@
+{
+    "restaurants": [
+        {
+            "id": "vecchia-combo",
+            "date": "2027-02-02",
+            "mealKey": "restaurants.dinner",
+            "name": "Ristorante Vecchia Combo",
+            "image": "../images/restaurants/vecchia-combo.jpeg",
+            "address": "Piazza del Santo Crocefisso 4, 23032 Bormio (SO)",
+            "map": "https://www.google.com/maps/search/?api=1&query=Ristorante+Vecchia+Combo+Bormio"
+        },
+        {
+            "id": "la-rasiga",
+            "date": "2027-02-03",
+            "mealKey": "restaurants.dinner",
+            "name": "La Rasiga Bormio",
+            "image": "../images/restaurants/la-rasiga.jpeg",
+            "address": "Via Guglielmo Marconi 6, 23032 Bormio (SO)",
+            "map": "https://www.google.com/maps/search/?api=1&query=La+Rasiga+Bormio",
+            "website": "https://www.ristorantelarasiga.com/"
+        },
+        {
+            "id": "de-i-magri",
+            "date": "2027-02-04",
+            "mealKey": "restaurants.dinner",
+            "name": "Osteria De I Magri",
+            "image": "../images/restaurants/de-i-magri.jpeg",
+            "address": "Vicolo Galileo Galilei 1, 23032 Bormio (SO)",
+            "map": "https://www.google.com/maps/search/?api=1&query=Osteria+De+I+Magri+Bormio",
+            "website": "https://osteriadeimagri.it/"
+        },
+        {
+            "id": "pizza-da-lollo",
+            "date": "2027-02-05",
+            "mealKey": "restaurants.lunch",
+            "name": "Pizza da Lollo",
+            "image": "../images/restaurants/pizza-da-lollo.jpeg",
+            "address": "Via Trieste 24, 23032 Bormio (SO)",
+            "map": "https://www.google.com/maps/search/?api=1&query=Pizza+da+Lollo+Bormio"
+        }
+    ]
+}

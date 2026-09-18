@@ -1,0 +1,198 @@
+/* =========================================================
+   BORMIO · RISTORANTI
+========================================================= */
+
+.restaurants-page {
+    min-height: 100svh;
+    background:
+        linear-gradient(180deg, rgba(3, 13, 28, 0.25), #061326 31%),
+        url("../images/bormio-bg.jpg") center top / cover no-repeat;
+}
+
+.restaurants-main {
+    position: relative;
+    z-index: 2;
+    width: min(980px, calc(100% - 28px));
+    margin: auto;
+    padding: 35px 0 60px;
+}
+
+.restaurants-hero {
+    min-height: 28svh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-bottom: 35px;
+}
+
+.restaurants-hero h1 {
+    margin-bottom: 12px;
+}
+
+.restaurants-hero p {
+    margin: 0;
+    opacity: 0.72;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.restaurants-section-title {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 10px 0 18px;
+}
+
+.restaurants-section-title > span {
+    font-size: 27px;
+}
+
+.restaurants-section-title h2 {
+    margin: 0;
+    font-size: 28px;
+}
+
+.restaurants-section-title p {
+    margin: 4px 0 0;
+    font-size: 9px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    opacity: 0.65;
+}
+
+.restaurant-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.restaurant-card {
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 20px;
+    background: rgba(5, 19, 37, 0.84);
+    backdrop-filter: blur(12px);
+}
+
+.restaurant-image {
+    position: relative;
+    height: 230px;
+}
+
+.restaurant-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.restaurant-date {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    min-width: 66px;
+    padding: 9px 10px;
+    border-radius: 13px;
+    background: rgba(112, 27, 54, 0.94);
+    text-align: center;
+}
+
+.restaurant-date strong,
+.restaurant-date span {
+    display: block;
+}
+
+.restaurant-date strong {
+    font: 25px Georgia, serif;
+}
+
+.restaurant-date span {
+    margin-top: 2px;
+    font-size: 8px;
+    letter-spacing: 0.15em;
+}
+
+.restaurant-card-content {
+    padding: 17px;
+}
+
+.restaurant-card h3 {
+    margin: 0 0 9px;
+    font-size: 25px;
+}
+
+.restaurant-address {
+    min-height: 34px;
+    margin: 0 0 15px;
+    font-size: 11px;
+    line-height: 1.5;
+    opacity: 0.72;
+}
+
+.restaurant-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.restaurant-actions a {
+    flex: 1;
+    min-height: 43px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ffd89b;
+    border-radius: 12px;
+    color: #ffd89b;
+    text-decoration: none;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+}
+
+.restaurant-actions a.primary {
+    background: #ffe0a2;
+    color: #091525;
+}
+
+.lunch-section {
+    margin-top: 45px;
+}
+
+.lunch-grid {
+    grid-template-columns: 1fr;
+}
+
+.lunch-grid .restaurant-card {
+    display: grid;
+    grid-template-columns: minmax(260px, 42%) 1fr;
+}
+
+.lunch-grid .restaurant-image {
+    height: 100%;
+    min-height: 270px;
+}
+
+.lunch-grid .restaurant-card-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+@media (max-width: 760px) {
+    .restaurant-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .restaurant-image {
+        height: 260px;
+    }
+
+    .lunch-grid .restaurant-card {
+        display: block;
+    }
+
+    .lunch-grid .restaurant-image {
+        min-height: 0;
+        height: 260px;
+    }
+}

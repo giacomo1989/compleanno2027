@@ -7,39 +7,22 @@
     <link href="../css/style.css" rel="stylesheet">
     <link href="../css/programma.css" rel="stylesheet">
 </head>
-
 <body data-root="..">
-
     <div class="lang">
         <button data-lang="it" onclick="setLanguage('it')">IT</button>
         <button data-lang="es" onclick="setLanguage('es')">ES</button>
     </div>
-
     <section class="program-page">
-        <header class="top">
-            <a class="back" href="index.html">←</a>
-        </header>
-
+        <header class="top"><a class="back" href="index.html">←</a></header>
         <main class="program-main">
-
-            <!-- =========================
-                 HEADER
-            ========================== -->
             <section class="program-hero">
                 <div class="smallcap">BORMIO · 02—05 FEBBRAIO 2027</div>
                 <h1 data-i18n="program.title"></h1>
                 <p class="program-note" data-i18n="program.note"></p>
             </section>
-
-            <!-- =========================
-                 PROGRAMMA
-                 Generato da data/programma.json
-            ========================== -->
             <div id="programDays"></div>
-
         </main>
     </section>
-
     <script src="../js/i18n.js"></script>
     <script src="../js/programma.js"></script>
 </body>

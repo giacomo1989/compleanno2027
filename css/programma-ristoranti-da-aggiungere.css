@@ -1,0 +1,36 @@
+/* =========================================================
+   PROGRAMMA · RISTORANTE ASSOCIATO
+========================================================= */
+
+.event-text {
+    min-width: 0;
+    flex: 1;
+}
+
+.event-text strong,
+.event-place {
+    display: block;
+}
+
+.event-place {
+    margin-top: 4px;
+    font-size: 11px;
+    opacity: 0.72;
+}
+
+.event-place-image {
+    display: block;
+    width: 100%;
+    height: 155px;
+    margin-top: 11px;
+    object-fit: cover;
+    border-radius: 14px;
+}
+
+.event-with-place {
+    min-height: 230px;
+}
+
+.event-with-place .event-content {
+    align-items: flex-start;
+}

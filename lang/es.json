@@ -34,10 +34,20 @@
     "program.day5.label": "Venice Bound",
     "program.aperitivo": "Aperitivo",
     "program.dinner": "Cena",
+    "program.lunch": "Almuerzo",
     "program.ski": "Esquí",
     "program.hutLunch": "Almuerzo en refugio",
     "program.checkout": "Check-out",
     "program.veniceDeparture": "Salida hacia Venecia",
     "live.today": "LIVE · PROGRAMA DE HOY",
-    "live.noEvents": "No hay eventos programados para hoy."
+    "restaurants.title": "Restaurantes",
+    "restaurants.subtitle": "Nuestros sitios para estos días.",
+    "restaurants.dinnersTitle": "Nuestras cenas",
+    "restaurants.dinnersSubtitle": "Tres noches, tres restaurantes.",
+    "restaurants.lunchTitle": "Almuerzo del 5 de febrero",
+    "restaurants.lunchSubtitle": "Una pizza antes de salir.",
+    "restaurants.dinner": "CENA",
+    "restaurants.lunch": "ALMUERZO",
+    "restaurants.map": "📍 MAPA",
+    "restaurants.website": "WEB / RESERVAR"
 }

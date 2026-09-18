@@ -24,10 +24,7 @@ function updateCountdown() {
         const seconds = Math.floor((remaining % 60000) / 1000);
 
         element.innerHTML = [
-            [days, "D"],
-            [hours, "H"],
-            [minutes, "M"],
-            [seconds, "S"]
+            [days, "D"], [hours, "H"], [minutes, "M"], [seconds, "S"]
         ].map(value => `
             <div>
                 <b>${String(value[0]).padStart(2, "0")}</b>
@@ -52,26 +49,24 @@ async function renderLive() {
     ]);
 
     const program = await programResponse.json();
-    const translations = await translationResponse.json();
-    const today = localDateKey();
-
-    const events = program.bormio?.[today] || [];
-
-    if (!events.length) {
-        live.innerHTML = `<div class="smallcap">${translations["live.today"] || "LIVE"}</div>`;
-        return;
-    }
+    const t = await translationResponse.json();
+    const events = program.bormio?.[localDateKey()] || [];
 
     live.innerHTML = `
-        <div class="smallcap">${translations["live.today"] || "LIVE"}</div>
-        <div class="live-events">
-            ${events.map(event => `
-                <div class="live-event">
-                    <b>${event.displayTime || event.time}</b>
-                    <span>${event.icon || ""} ${translations[event.key] || event.key}</span>
-                </div>
-            `).join("")}
-        </div>
+        <div class="smallcap">${t["live.today"] || "LIVE"}</div>
+        ${events.length ? `
+            <div class="live-events">
+                ${events.map(event => `
+                    <div class="live-event">
+                        <b>${event.displayTime || event.time}</b>
+                        <span>
+                            ${event.icon || ""} ${t[event.key] || event.key}
+                            ${event.place ? `<small class="live-place">${event.place}</small>` : ""}
+                        </span>
+                    </div>
+                `).join("")}
+            </div>
+        ` : ""}
     `;
 }
 

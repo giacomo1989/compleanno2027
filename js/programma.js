@@ -12,8 +12,7 @@ function currentLanguage() {
 }
 
 async function getTranslations() {
-    const lang = currentLanguage();
-    const response = await fetch(`../lang/${lang}.json`);
+    const response = await fetch(`../lang/${currentLanguage()}.json`);
     return response.json();
 }
 
@@ -23,20 +22,26 @@ async function renderProgram() {
         programData = await response.json();
     }
 
-    const translations = await getTranslations();
-    const container = document.getElementById("programDays");
+    const t = await getTranslations();
     const bormio = programData.bormio || {};
+    const container = document.getElementById("programDays");
 
     container.innerHTML = BORMIO_DATES.map(dayInfo => {
         const events = bormio[dayInfo.date] || [];
 
         const eventHtml = events.map(event => `
-            <div class="event">
+            <div class="event ${event.place && event.image ? "event-with-place" : ""}">
                 <time>${event.displayTime || event.time}</time>
                 <div class="event-dot"></div>
                 <div class="event-content">
                     <span class="event-icon">${event.icon || ""}</span>
-                    <strong>${translations[event.key] || event.key}</strong>
+                    <div class="event-text">
+                        <strong>${t[event.key] || event.key}</strong>
+                        ${event.place ? `<span class="event-place">${event.place}</span>` : ""}
+                        ${event.place && event.image ? `
+                            <img class="event-place-image" src="${event.image}" alt="${event.place}">
+                        ` : ""}
+                    </div>
                 </div>
             </div>
         `).join("");
@@ -46,9 +51,9 @@ async function renderProgram() {
                 <div class="day-heading">
                     <div>
                         <span class="day-number">${dayInfo.day}</span>
-                        <span class="day-month">${translations["program.february"] || "FEBBRAIO"}</span>
+                        <span class="day-month">${t["program.february"] || "FEBBRAIO"}</span>
                     </div>
-                    <span class="day-label">${translations[dayInfo.labelKey] || ""}</span>
+                    <span class="day-label">${t[dayInfo.labelKey] || ""}</span>
                 </div>
                 <div class="timeline">${eventHtml}</div>
             </section>
@@ -58,10 +63,10 @@ async function renderProgram() {
 
 document.addEventListener("DOMContentLoaded", renderProgram);
 
-const originalSetLanguage = window.setLanguage;
-if (typeof originalSetLanguage === "function") {
+const programOriginalSetLanguage = window.setLanguage;
+if (typeof programOriginalSetLanguage === "function") {
     window.setLanguage = async function(lang) {
-        await originalSetLanguage(lang);
+        await programOriginalSetLanguage(lang);
         await renderProgram();
     };
 }

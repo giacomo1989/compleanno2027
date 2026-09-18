@@ -19,7 +19,8 @@
             {
                 "time": "21:00",
                 "icon": "🍽️",
-                "key": "program.dinner"
+                "key": "program.dinner",
+                "place": "Ristorante Vecchia Combo"
             }
         ],
         "2027-02-02": [
@@ -31,7 +32,10 @@
             {
                 "time": "21:00",
                 "icon": "🍽️",
-                "key": "program.dinner"
+                "key": "program.dinner",
+                "place": "Ristorante Vecchia Combo",
+                "restaurantId": "vecchia-combo",
+                "image": "../images/restaurants/vecchia-combo.jpeg"
             }
         ],
         "2027-02-03": [
@@ -53,7 +57,10 @@
             {
                 "time": "21:00",
                 "icon": "🍽️",
-                "key": "program.dinner"
+                "key": "program.dinner",
+                "place": "La Rasiga Bormio",
+                "restaurantId": "la-rasiga",
+                "image": "../images/restaurants/la-rasiga.jpeg"
             }
         ],
         "2027-02-04": [
@@ -75,7 +82,10 @@
             {
                 "time": "21:00",
                 "icon": "🍽️",
-                "key": "program.dinner"
+                "key": "program.dinner",
+                "place": "Osteria De I Magri",
+                "restaurantId": "de-i-magri",
+                "image": "../images/restaurants/de-i-magri.jpeg"
             }
         ],
         "2027-02-05": [
@@ -85,8 +95,17 @@
                 "key": "program.checkout"
             },
             {
-                "time": "10:15",
-                "displayTime": "→",
+                "time": "",
+                "displayTime": "PRANZO",
+                "icon": "🍕",
+                "key": "program.lunch",
+                "place": "Pizza da Lollo",
+                "restaurantId": "pizza-da-lollo",
+                "image": "../images/restaurants/pizza-da-lollo.jpeg"
+            },
+            {
+                "time": "",
+                "displayTime": "DOPO",
                 "icon": "🚗",
                 "key": "program.veniceDeparture"
             }
