@@ -181,3 +181,69 @@
         border-radius: 19px;
     }
 }
+
+/* =========================================================
+   FIX DEFINITIVO · FOTO RISTORANTI NEL PROGRAMMA
+========================================================= */
+
+.event {
+    display: grid;
+    grid-template-columns: 54px 16px minmax(0, 1fr);
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+}
+
+.event-content {
+    display: flex;
+    min-width: 0;
+    max-width: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.event-text {
+    display: block;
+    flex: 1 1 0;
+    min-width: 0;
+    max-width: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.event-place-image {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: 130px;
+    object-fit: cover;
+    object-position: center;
+    margin-top: 10px;
+    border-radius: 14px;
+}
+
+.day-card {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    overflow: hidden;
+}
+
+.timeline {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    overflow: hidden;
+}
+
+.event-with-place {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+}
+
+.event-with-place .event-content {
+    min-width: 0;
+    max-width: 100%;
+    overflow: hidden;
+}
