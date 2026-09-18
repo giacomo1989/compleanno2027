@@ -1,7 +1,7 @@
 {
     "restaurants": [
         {
-            "id": "pizza-da-lollo",
+            "id": "pizza-da-lollo_02",
             "date": "2027-02-02",
             "mealKey": "restaurants.dinner",
             "name": "Pizza da Lollo",
@@ -30,7 +30,7 @@
             "website": "https://osteriadeimagri.it/"
         },
         {
-            "id": "pizza-da-lollo",
+            "id": "pizza-da-lollo_05",
             "date": "2027-02-05",
             "mealKey": "restaurants.lunch",
             "name": "Pizza da Lollo",
