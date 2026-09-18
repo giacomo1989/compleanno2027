@@ -1,99 +1,90 @@
 /* =========================================================
    BORMIO · RISTORANTI
-   Rendering delle cene e delle opzioni pranzo.
+   Mantiene il markup originale previsto da ristoranti.css.
+   Gestisce anche ristoranti con data, indirizzo o sito mancanti.
 ========================================================= */
 
 let restaurantsData = null;
 
-function currentLanguage() {
+function restaurantLang() {
     return localStorage.getItem("gb_lang") || "it";
 }
 
-async function getRestaurantTranslations() {
-    const response = await fetch("../lang/" + currentLanguage() + ".json");
+async function loadRestaurantTranslations() {
+    const response = await fetch(`../lang/${restaurantLang()}.json`);
     return response.json();
 }
 
-function formatRestaurantDate(dateString) {
+function dateParts(dateString) {
     if (!dateString) {
-        return "";
+        return null;
     }
 
-    const [year, month, day] = dateString.split("-");
+    const [, month, day] = dateString.split("-");
 
-    const months = {
-        "01": "GEN",
-        "02": "FEB",
-        "03": "MAR",
-        "04": "APR",
-        "05": "MAG",
-        "06": "GIU",
-        "07": "LUG",
-        "08": "AGO",
-        "09": "SET",
-        "10": "OTT",
-        "11": "NOV",
-        "12": "DIC"
+    return {
+        day,
+        month: month === "02" ? "FEB" : month
     };
-
-    return day + " " + (months[month] || month);
 }
 
-function restaurantCard(item, t) {
-    const date = formatRestaurantDate(item.date);
+function restaurantCard(item, translations) {
+    const date = dateParts(item.date);
 
-    const metaParts = [];
+    /*
+     * Manteniamo SEMPRE .restaurant-date, perché il CSS originale
+     * è costruito su questo badge.
+     *
+     * Se la data manca, mostriamo soltanto il tipo di pasto.
+     */
+    const dateBadge = date
+        ? `
+            <div class="restaurant-date">
+                <strong>${date.day}</strong>
+                <span>${date.month}</span>
+                <span>${translations[item.mealKey] || ""}</span>
+            </div>
+        `
+        : `
+            <div class="restaurant-date">
+                <span>${translations[item.mealKey] || "PRANZO"}</span>
+            </div>
+        `;
 
-    if (date) {
-        metaParts.push(date);
-    }
+    const address = item.address
+        ? `<p class="restaurant-address">📍 ${item.address}</p>`
+        : "";
 
-    if (item.mealKey && t[item.mealKey]) {
-        metaParts.push(t[item.mealKey]);
-    }
+    const map = item.map
+        ? `
+            <a href="${item.map}" target="_blank" rel="noopener">
+                ${translations["restaurants.map"] || "MAPPA"}
+            </a>
+        `
+        : "";
 
-    const meta = metaParts.join(" · ");
+    const website = item.website
+        ? `
+            <a class="primary" href="${item.website}" target="_blank" rel="noopener">
+                ${translations["restaurants.website"] || "SITO"}
+            </a>
+        `
+        : "";
 
     return `
         <article class="restaurant-card">
-            <img
-                class="restaurant-image"
-                src="${item.image}"
-                alt="${item.name}"
-                loading="lazy"
-            >
+            <div class="restaurant-image">
+                <img src="${item.image}" alt="${item.name}" loading="lazy">
+                ${dateBadge}
+            </div>
 
-            <div class="restaurant-card-body">
-                ${meta ? `<div class="restaurant-meta">${meta}</div>` : ""}
-
+            <div class="restaurant-card-content">
                 <h3>${item.name}</h3>
-
-                ${item.address ? `
-                    <p class="restaurant-address">${item.address}</p>
-                ` : ""}
+                ${address}
 
                 <div class="restaurant-actions">
-                    ${item.map ? `
-                        <a
-                            class="restaurant-action"
-                            href="${item.map}"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            📍 ${t["restaurants.map"] || "MAPPA"}
-                        </a>
-                    ` : ""}
-
-                    ${item.website ? `
-                        <a
-                            class="restaurant-action"
-                            href="${item.website}"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            ↗ ${t["restaurants.website"] || "SITO"}
-                        </a>
-                    ` : ""}
+                    ${map}
+                    ${website}
                 </div>
             </div>
         </article>
@@ -106,7 +97,7 @@ async function renderRestaurants() {
         restaurantsData = await response.json();
     }
 
-    const t = await getRestaurantTranslations();
+    const translations = await loadRestaurantTranslations();
     const restaurants = restaurantsData.restaurants || [];
 
     const dinners = restaurants.filter(
@@ -114,9 +105,9 @@ async function renderRestaurants() {
     );
 
     /*
-     * lunchRestaurants contiene:
-     * - i pranzi già programmati, come Pizza da Lollo;
-     * - le opzioni pranzo sci, anche se non hanno ancora una data.
+     * Include:
+     * - i pranzi già programmati;
+     * - le opzioni pranzo sci ancora senza data.
      */
     const lunches = restaurants.filter(
         item =>
@@ -129,28 +120,24 @@ async function renderRestaurants() {
 
     if (dinnerContainer) {
         dinnerContainer.innerHTML = dinners
-            .map(item => restaurantCard(item, t))
+            .map(item => restaurantCard(item, translations))
             .join("");
     }
 
     if (lunchContainer) {
         lunchContainer.innerHTML = lunches
-            .map(item => restaurantCard(item, t))
+            .map(item => restaurantCard(item, translations))
             .join("");
     }
 }
 
 document.addEventListener("DOMContentLoaded", renderRestaurants);
 
-/*
- * Se l'utente cambia lingua mentre si trova nella pagina,
- * ridisegniamo anche le card dei ristoranti.
- */
-const restaurantsOriginalSetLanguage = window.setLanguage;
+const restaurantOriginalSetLanguage = window.setLanguage;
 
-if (typeof restaurantsOriginalSetLanguage === "function") {
+if (typeof restaurantOriginalSetLanguage === "function") {
     window.setLanguage = async function(lang) {
-        await restaurantsOriginalSetLanguage(lang);
+        await restaurantOriginalSetLanguage(lang);
         await renderRestaurants();
     };
 }
