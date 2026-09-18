@@ -1,41 +1,99 @@
+/* =========================================================
+   BORMIO · RISTORANTI
+   Rendering delle cene e delle opzioni pranzo.
+========================================================= */
+
 let restaurantsData = null;
 
-function restaurantLang() {
+function currentLanguage() {
     return localStorage.getItem("gb_lang") || "it";
 }
 
-async function loadRestaurantTranslations() {
-    const response = await fetch(`../lang/${restaurantLang()}.json`);
+async function getRestaurantTranslations() {
+    const response = await fetch("../lang/" + currentLanguage() + ".json");
     return response.json();
 }
 
-function dateParts(dateString) {
-    const [, month, day] = dateString.split("-");
-    return { day, month: month === "02" ? "FEB" : month };
+function formatRestaurantDate(dateString) {
+    if (!dateString) {
+        return "";
+    }
+
+    const [year, month, day] = dateString.split("-");
+
+    const months = {
+        "01": "GEN",
+        "02": "FEB",
+        "03": "MAR",
+        "04": "APR",
+        "05": "MAG",
+        "06": "GIU",
+        "07": "LUG",
+        "08": "AGO",
+        "09": "SET",
+        "10": "OTT",
+        "11": "NOV",
+        "12": "DIC"
+    };
+
+    return day + " " + (months[month] || month);
 }
 
-function restaurantCard(item, translations) {
-    const date = dateParts(item.date);
-    const website = item.website
-        ? `<a class="primary" href="${item.website}" target="_blank" rel="noopener">${translations["restaurants.website"]}</a>`
-        : "";
+function restaurantCard(item, t) {
+    const date = formatRestaurantDate(item.date);
+
+    const metaParts = [];
+
+    if (date) {
+        metaParts.push(date);
+    }
+
+    if (item.mealKey && t[item.mealKey]) {
+        metaParts.push(t[item.mealKey]);
+    }
+
+    const meta = metaParts.join(" · ");
 
     return `
         <article class="restaurant-card">
-            <div class="restaurant-image">
-                <img src="${item.image}" alt="${item.name}">
-                <div class="restaurant-date">
-                    <strong>${date.day}</strong>
-                    <span>${date.month}</span>
-                    <span>${translations[item.mealKey] || ""}</span>
-                </div>
-            </div>
-            <div class="restaurant-card-content">
+            <img
+                class="restaurant-image"
+                src="${item.image}"
+                alt="${item.name}"
+                loading="lazy"
+            >
+
+            <div class="restaurant-card-body">
+                ${meta ? `<div class="restaurant-meta">${meta}</div>` : ""}
+
                 <h3>${item.name}</h3>
-                <p class="restaurant-address">📍 ${item.address}</p>
+
+                ${item.address ? `
+                    <p class="restaurant-address">${item.address}</p>
+                ` : ""}
+
                 <div class="restaurant-actions">
-                    <a href="${item.map}" target="_blank" rel="noopener">${translations["restaurants.map"]}</a>
-                    ${website}
+                    ${item.map ? `
+                        <a
+                            class="restaurant-action"
+                            href="${item.map}"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            📍 ${t["restaurants.map"] || "MAPPA"}
+                        </a>
+                    ` : ""}
+
+                    ${item.website ? `
+                        <a
+                            class="restaurant-action"
+                            href="${item.website}"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            ↗ ${t["restaurants.website"] || "SITO"}
+                        </a>
+                    ` : ""}
                 </div>
             </div>
         </article>
@@ -48,23 +106,51 @@ async function renderRestaurants() {
         restaurantsData = await response.json();
     }
 
-    const translations = await loadRestaurantTranslations();
-    const dinners = restaurantsData.restaurants.filter(item => item.mealKey === "restaurants.dinner");
-    const lunches = restaurantsData.restaurants.filter(item => item.mealKey === "restaurants.lunch");
+    const t = await getRestaurantTranslations();
+    const restaurants = restaurantsData.restaurants || [];
 
-    document.getElementById("dinnerRestaurants").innerHTML =
-        dinners.map(item => restaurantCard(item, translations)).join("");
+    const dinners = restaurants.filter(
+        item => item.mealKey === "restaurants.dinner"
+    );
 
-    document.getElementById("lunchRestaurants").innerHTML =
-        lunches.map(item => restaurantCard(item, translations)).join("");
+    /*
+     * lunchRestaurants contiene:
+     * - i pranzi già programmati, come Pizza da Lollo;
+     * - le opzioni pranzo sci, anche se non hanno ancora una data.
+     */
+    const lunches = restaurants.filter(
+        item =>
+            item.mealKey === "restaurants.lunch" ||
+            item.category === "ski-lunch-option"
+    );
+
+    const dinnerContainer = document.getElementById("dinnerRestaurants");
+    const lunchContainer = document.getElementById("lunchRestaurants");
+
+    if (dinnerContainer) {
+        dinnerContainer.innerHTML = dinners
+            .map(item => restaurantCard(item, t))
+            .join("");
+    }
+
+    if (lunchContainer) {
+        lunchContainer.innerHTML = lunches
+            .map(item => restaurantCard(item, t))
+            .join("");
+    }
 }
 
 document.addEventListener("DOMContentLoaded", renderRestaurants);
 
-const restaurantOriginalSetLanguage = window.setLanguage;
-if (typeof restaurantOriginalSetLanguage === "function") {
+/*
+ * Se l'utente cambia lingua mentre si trova nella pagina,
+ * ridisegniamo anche le card dei ristoranti.
+ */
+const restaurantsOriginalSetLanguage = window.setLanguage;
+
+if (typeof restaurantsOriginalSetLanguage === "function") {
     window.setLanguage = async function(lang) {
-        await restaurantOriginalSetLanguage(lang);
+        await restaurantsOriginalSetLanguage(lang);
         await renderRestaurants();
     };
 }
