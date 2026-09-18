@@ -1,13 +1,13 @@
 {
     "restaurants": [
         {
-            "id": "vecchia-combo",
+            "id": "pizza-da-lollo",
             "date": "2027-02-02",
             "mealKey": "restaurants.dinner",
-            "name": "Ristorante Vecchia Combo",
-            "image": "../images/restaurants/vecchia-combo.jpeg",
-            "address": "Piazza del Santo Crocefisso 4, 23032 Bormio (SO)",
-            "map": "https://www.google.com/maps/search/?api=1&query=Ristorante+Vecchia+Combo+Bormio"
+            "name": "Pizza da Lollo",
+            "image": "../images/restaurants/pizza-da-lollo.jpeg",
+            "address": "Via Trieste 24, 23032 Bormio (SO)",
+            "map": "https://www.google.com/maps/search/?api=1&query=Pizza+da+Lollo+Bormio"
         },
         {
             "id": "la-rasiga",
