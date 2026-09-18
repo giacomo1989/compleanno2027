@@ -37,6 +37,30 @@
             "image": "../images/restaurants/pizza-da-lollo.jpeg",
             "address": "Via Trieste 24, 23032 Bormio (SO)",
             "map": "https://www.google.com/maps/search/?api=1&query=Pizza+da+Lollo+Bormio"
+        },
+        {
+            "id": "heaven-3000",
+            "category": "ski-lunch-option",
+            "mealKey": "restaurants.lunch",
+            "name": "Heaven 3000 Panoramic Restaurant",
+            "image": "../images/restaurants/heaven-3000.jpeg",
+            "map": "https://www.google.com/maps/search/?api=1&query=Heaven+3000+Panoramic+Restaurant+Bormio"
+        },
+        {
+            "id": "gallo-cedrone",
+            "category": "ski-lunch-option",
+            "mealKey": "restaurants.lunch",
+            "name": "Ristorante Gallo Cedrone",
+            "image": "../images/restaurants/gallo-cedrone.jpeg",
+            "map": "https://www.google.com/maps/search/?api=1&query=Ristorante+Gallo+Cedrone+Bormio"
+        },
+        {
+            "id": "chalet-la-rocca",
+            "category": "ski-lunch-option",
+            "mealKey": "restaurants.lunch",
+            "name": "Chalet La Rocca Ristorante Pizzeria",
+            "image": "../images/restaurants/chalet-la-rocca.jpeg",
+            "map": "https://www.google.com/maps/search/?api=1&query=Chalet+La+Rocca+Ristorante+Pizzeria+Bormio"
         }
     ]
 }
