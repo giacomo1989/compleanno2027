@@ -1,36 +1,93 @@
 /* =========================================================
+
    PROGRAMMA · RISTORANTE ASSOCIATO
+
 ========================================================= */
 
 .event-text {
+
     min-width: 0;
+
+    width: 100%;
+
+    max-width: 100%;
+
+    overflow: hidden;
+
     flex: 1;
+
 }
 
 .event-text strong,
+
 .event-place {
+
     display: block;
+
 }
 
 .event-place {
+
     margin-top: 4px;
+
     font-size: 11px;
+
+    line-height: 1.4;
+
     opacity: 0.72;
+
 }
 
 .event-place-image {
+
     display: block;
+
     width: 100%;
-    height: 155px;
+
+    max-width: 100%;
+
+    height: 140px;
+
     margin-top: 11px;
+
     object-fit: cover;
+
+    object-position: center;
+
     border-radius: 14px;
+
 }
 
 .event-with-place {
-    min-height: 230px;
+
+    min-height: 215px;
+
+    min-width: 0;
+
 }
 
 .event-with-place .event-content {
+
     align-items: flex-start;
+
+    min-width: 0;
+
+    overflow: hidden;
+
+}
+
+/* Impedisce alla colonna della timeline
+
+   di allargarsi oltre la card */
+
+.event {
+
+    min-width: 0;
+
+}
+
+.event-content {
+
+    min-width: 0;
+
 }
