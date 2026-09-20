@@ -33,27 +33,38 @@ async function renderProgram() {
             <div class="event ${event.place && event.image ? "event-with-place" : ""}">
                 <time>${event.displayTime || event.time}</time>
                 <div class="event-dot"></div>
+
                 <div class="event-content">
                     <span class="event-icon">${event.icon || ""}</span>
+
                     <div class="event-text">
                         <strong>${t[event.key] || event.key}</strong>
+
                         ${event.place ? `
-                            <span class="event-place">
-                                ${event.place}
+                            <div class="event-place-row">
+                                <span class="event-place">${event.place}</span>
+
                                 ${event.map ? `
                                     <a
-                                        class="event-map-link"
+                                        class="event-map-button"
                                         href="${event.map}"
                                         target="_blank"
                                         rel="noopener"
                                         aria-label="Apri ${event.place} in Google Maps"
-                                        title="Google Maps"
-                                    >📍</a>
+                                    >
+                                        <span aria-hidden="true">📍</span>
+                                        <span>MAPS</span>
+                                    </a>
                                 ` : ""}
-                            </span>
+                            </div>
                         ` : ""}
+
                         ${event.place && event.image ? `
-                            <img class="event-place-image" src="${event.image}" alt="${event.place}">
+                            <img
+                                class="event-place-image"
+                                src="${event.image}"
+                                alt="${event.place}"
+                            >
                         ` : ""}
                     </div>
                 </div>
@@ -67,8 +78,10 @@ async function renderProgram() {
                         <span class="day-number">${dayInfo.day}</span>
                         <span class="day-month">${t["program.february"] || "FEBBRAIO"}</span>
                     </div>
+
                     <span class="day-label">${t[dayInfo.labelKey] || ""}</span>
                 </div>
+
                 <div class="timeline">${eventHtml}</div>
             </section>
         `;
