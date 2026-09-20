@@ -109,11 +109,13 @@ async function renderRestaurants() {
      * - i pranzi già programmati;
      * - le opzioni pranzo sci ancora senza data.
      */
-    const lunches = restaurants.filter(
+    const lunches = sortDatedFirst(
+    restaurants.filter(
         item =>
             item.mealKey === "restaurants.lunch" ||
             item.category === "ski-lunch-option"
-    );
+    )
+   );
 
     const dinnerContainer = document.getElementById("dinnerRestaurants");
     const lunchContainer = document.getElementById("lunchRestaurants");
@@ -140,4 +142,15 @@ if (typeof restaurantOriginalSetLanguage === "function") {
         await restaurantOriginalSetLanguage(lang);
         await renderRestaurants();
     };
+}
+
+function sortDatedFirst(items) {
+    return [...items].sort((a, b) => {
+        if (a.date && !b.date) return -1;
+        if (!a.date && b.date) return 1;
+        if (a.date && b.date) {
+            return a.date.localeCompare(b.date);
+        }
+        return 0;
+    });
 }
