@@ -1,28 +1,5 @@
 {
     "bormio": {
-        "2026-09-18": [
-            {
-                "time": "09:00",
-                "icon": "⛷️",
-                "key": "program.ski"
-            },
-            {
-                "time": "14:00",
-                "icon": "🏔️",
-                "key": "program.hutLunch"
-            },
-            {
-                "time": "18:00",
-                "icon": "🥂",
-                "key": "program.aperitivo"
-            },
-            {
-                "time": "21:00",
-                "icon": "🍽️",
-                "key": "program.dinner",
-                "place": "Ristorante Vecchia Combo"
-            }
-        ],
         "2027-02-02": [
             {
                 "time": "18:00",
@@ -33,9 +10,10 @@
                 "time": "21:00",
                 "icon": "🍽️",
                 "key": "program.dinner",
-                "place": "Ristorante Vecchia Combo",
-                "restaurantId": "vecchia-combo",
-                "image": "../images/restaurants/vecchia-combo.jpeg"
+                "place": "Pizza da Lollo",
+                "restaurantId": "pizza-da-lollo",
+                "image": "../images/restaurants/pizza-da-lollo.jpeg",
+                "map": "https://www.google.com/maps/search/?api=1&query=Pizza+da+Lollo+Bormio"
             }
         ],
         "2027-02-03": [
@@ -60,7 +38,8 @@
                 "key": "program.dinner",
                 "place": "La Rasiga Bormio",
                 "restaurantId": "la-rasiga",
-                "image": "../images/restaurants/la-rasiga.jpeg"
+                "image": "../images/restaurants/la-rasiga.jpeg",
+                "map": "https://www.google.com/maps/search/?api=1&query=La+Rasiga+Bormio"
             }
         ],
         "2027-02-04": [
@@ -85,7 +64,8 @@
                 "key": "program.dinner",
                 "place": "Osteria De I Magri",
                 "restaurantId": "de-i-magri",
-                "image": "../images/restaurants/de-i-magri.jpeg"
+                "image": "../images/restaurants/de-i-magri.jpeg",
+                "map": "https://www.google.com/maps/search/?api=1&query=Osteria+De+I+Magri+Bormio"
             }
         ],
         "2027-02-05": [
@@ -101,7 +81,8 @@
                 "key": "program.lunch",
                 "place": "Pizza da Lollo",
                 "restaurantId": "pizza-da-lollo",
-                "image": "../images/restaurants/pizza-da-lollo.jpeg"
+                "image": "../images/restaurants/pizza-da-lollo.jpeg",
+                "map": "https://www.google.com/maps/search/?api=1&query=Pizza+da+Lollo+Bormio"
             },
             {
                 "time": "",
