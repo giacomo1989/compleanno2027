@@ -37,7 +37,21 @@ async function renderProgram() {
                     <span class="event-icon">${event.icon || ""}</span>
                     <div class="event-text">
                         <strong>${t[event.key] || event.key}</strong>
-                        ${event.place ? `<span class="event-place">${event.place}</span>` : ""}
+                        ${event.place ? `
+                            <span class="event-place">
+                                ${event.place}
+                                ${event.map ? `
+                                    <a
+                                        class="event-map-link"
+                                        href="${event.map}"
+                                        target="_blank"
+                                        rel="noopener"
+                                        aria-label="Apri ${event.place} in Google Maps"
+                                        title="Google Maps"
+                                    >📍</a>
+                                ` : ""}
+                            </span>
+                        ` : ""}
                         ${event.place && event.image ? `
                             <img class="event-place-image" src="${event.image}" alt="${event.place}">
                         ` : ""}
@@ -64,6 +78,7 @@ async function renderProgram() {
 document.addEventListener("DOMContentLoaded", renderProgram);
 
 const programOriginalSetLanguage = window.setLanguage;
+
 if (typeof programOriginalSetLanguage === "function") {
     window.setLanguage = async function(lang) {
         await programOriginalSetLanguage(lang);
