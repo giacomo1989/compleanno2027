@@ -30,14 +30,6 @@
             "website": "https://osteriadeimagri.it/"
         },
         {
-            "id": "pizza-da-lollo_05",
-            "mealKey": "restaurants.lunch",
-            "name": "Pizza da Lollo",
-            "image": "../images/restaurants/pizza-da-lollo.jpeg",
-            "address": "Via Trieste 24, 23032 Bormio (SO)",
-            "map": "https://www.google.com/maps/search/?api=1&query=Pizza+da+Lollo+Bormio"
-        },
-        {
             "id": "heaven-3000",
             "category": "ski-lunch-option",
             "mealKey": "restaurants.lunch",
