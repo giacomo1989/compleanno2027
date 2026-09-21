@@ -17,7 +17,7 @@
 .tile-photo { position:relative; aspect-ratio:4/5; overflow:hidden; background:#0d1118; }
 .person-tile img,.final-person>img { width:100%; height:100%; display:block; object-fit:cover; }
 .person-tile img { transform:scale(1.08); }
-.person-tile.unplayed img,.person-tile.failed img { filter:blur(18px); }
+.person-tile.unplayed img,.person-tile.failed img { filter:blur(50px); }
 .mystery { position:absolute; inset:0; display:grid; place-items:center; font-size:clamp(2rem,8vw,4.5rem); font-weight:300; text-shadow:0 2px 20px rgba(0,0,0,.55); }
 .person-tile.guessed .mystery { display:none; }
 .tile-body { min-height:74px; padding:12px 14px 14px; }
@@ -33,8 +33,8 @@
 .quiz-card { display:grid; grid-template-columns:minmax(260px,.85fr) minmax(0,1.15fr); gap:28px; align-items:center; max-width:900px; margin:0 auto; padding:20px; border:1px solid rgba(255,216,155,.2); border-radius:22px; background:rgba(8,13,22,.82); }
 .quiz-photo { position:relative; overflow:hidden; aspect-ratio:4/5; border-radius:16px; background:#0d1118; }
 .quiz-photo img { width:100%; height:100%; object-fit:cover; transform:scale(1.06); }
-.quiz-photo.hard img { filter:blur(20px); }
-.quiz-photo.soft img { filter:blur(9px); }
+.quiz-photo.hard img { filter:blur(50px); }
+.quiz-photo.soft img { filter:blur(19px); }
 .quiz-photo.clear img { filter:none; }
 .quiz-photo.clear .mystery { display:none; }
 .quiz-content .eyebrow,.result-line { margin-bottom:10px; font-size:.7rem; letter-spacing:.14em; opacity:.68; }
