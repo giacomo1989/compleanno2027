@@ -29,8 +29,8 @@
 .card-number.compact { font-size: clamp(31px, 3.4vw, 45px); }
 .card-actions { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 .useful-card > .action { grid-column: 1 / -1; }
-.action { min-height: 52px; display: flex; align-items: center; justify-content: center; padding: 12px 22px; border: 1px solid #e8bd78; border-radius: 999px; color: #efc786; text-decoration: none; text-transform: uppercase; letter-spacing: .15em; font-size: 12px; font-weight: 700; transition: .2s ease; }
-.action:hover { background: rgba(232,189,120,.12); transform: translateY(-1px); }
+.action { min-height: 52px; display: flex; align-items: center; justify-content: center; padding: 12px 22px; border: 1px solid #e8bd78; border-radius: 999px; color: #0a141c; text-decoration: none; text-transform: uppercase; letter-spacing: .15em; font-size: 12px; font-weight: 700; transition: .2s ease; }
+.action:hover { background: rgb(232 189 120 / 48%); transform: translateY(-1px); }
 .action-danger { min-width: 220px; border-color: #ff6a60; color: #fff1ed; background: rgba(199,39,31,.26); }
 .action-danger:hover { background: rgba(199,39,31,.4); }
 .useful-footer { margin: 44px auto 0; text-align: center; color: rgba(255,255,255,.65); letter-spacing: .34em; text-transform: uppercase; font-size: 11px; }
