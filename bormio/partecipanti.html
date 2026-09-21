@@ -1,34 +1,49 @@
 <!DOCTYPE html>
-<html>
- <head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width,initial-scale=1" name="viewport"/>
-  <link href="../css/style.css" rel="stylesheet"/>
- </head>
- <body data-root="..">
-  <div class="lang">
-   <button data-lang="it" onclick="setLanguage('it')">
-    IT
-   </button>
-   <button data-lang="es" onclick="setLanguage('es')">
-    ES
-   </button>
-  </div>
-  <section class="placeholder">
-   <main>
-    <a class="back" href="index.html">
-     &larr;
-    </a>
-    <div class="smallcap">
-     BORMIO
+<html lang="it">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Who's Who? · Bormio</title>
+    <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/partecipanti-game.css" rel="stylesheet">
+</head>
+<body data-root="..">
+    <div class="lang">
+        <button data-lang="it" onclick="setLanguage('it')">IT</button>
+        <button data-lang="es" onclick="setLanguage('es')">ES</button>
     </div>
-    <h2 data-i18n="common.people">
-    </h2>
-    <div class="panel" data-i18n="placeholder">
-    </div>
-   </main>
-  </section>
-  <script src="../js/i18n.js">
-  </script>
- </body>
+
+    <section class="who-page">
+        <header class="top">
+            <a class="back" href="index.html">←</a>
+        </header>
+
+        <main class="who-main">
+            <div class="who-head">
+                <div class="smallcap" data-i18n="game.kicker"></div>
+                <h1 data-i18n="game.title"></h1>
+                <p data-i18n="game.subtitle"></p>
+            </div>
+
+            <div class="game-status">
+                <div>
+                    <span id="progress">1 / 6</span>
+                    <small id="characterLabel"></small>
+                </div>
+                <div>
+                    <span id="score">0</span>
+                    <small id="pointsLabel"></small>
+                </div>
+            </div>
+
+            <section id="game"></section>
+            <section id="final" class="hidden"></section>
+
+            <button id="resetGame" class="reset-button" type="button"></button>
+        </main>
+    </section>
+
+    <script src="../js/i18n.js"></script>
+    <script src="../js/partecipanti-game.js"></script>
+</body>
 </html>
