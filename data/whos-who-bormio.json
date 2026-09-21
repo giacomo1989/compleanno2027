@@ -1,0 +1,130 @@
+{
+    "participants": [
+        {
+            "id": "valentina",
+            "name": "Valentina",
+            "image": "../images/partecipanti/bormio/valentina.png",
+            "options": [
+                "Macarena",
+                "Valentina",
+                "Ximena",
+                "Ilaria",
+                "Tamires",
+                "Clara"
+            ],
+            "ratings": {
+                "alcolizzato": 2,
+                "sportivo": 1,
+                "locura": 2,
+                "tranquillo": 5
+            },
+            "question1Key": "game.valentina.q1",
+            "question2Key": "game.valentina.q2"
+        },
+        {
+            "id": "giacomo",
+            "name": "Giacomo",
+            "image": "../images/partecipanti/bormio/giacomo.jpeg",
+            "options": [
+                "Andrea",
+                "Giacomo",
+                "Fady",
+                "Alvar",
+                "Nadi",
+                "Roberto"
+            ],
+            "ratings": {
+                "alcolizzato": 5,
+                "sportivo": 5,
+                "locura": 4,
+                "tranquillo": 2
+            },
+            "question1Key": "game.giacomo.q1",
+            "question2Key": "game.giacomo.q2"
+        },
+        {
+            "id": "fady",
+            "name": "Fady",
+            "image": "../images/partecipanti/bormio/fady.jpeg",
+            "options": [
+                "Andrea",
+                "Giacomo",
+                "Fady",
+                "Alvar",
+                "Nadi",
+                "Roberto"
+            ],
+            "ratings": {
+                "alcolizzato": 5,
+                "sportivo": 4,
+                "locura": 3,
+                "tranquillo": 3
+            },
+            "question1Key": "game.fady.q1",
+            "question2Key": "game.fady.q2"
+        },
+        {
+            "id": "ximena",
+            "name": "Ximena",
+            "image": "../images/partecipanti/bormio/ximena.jpeg",
+            "options": [
+                "Macarena",
+                "Valentina",
+                "Ximena",
+                "Ilaria",
+                "Tamires",
+                "Clara"
+            ],
+            "ratings": {
+                "alcolizzato": 5,
+                "sportivo": 4,
+                "locura": 5,
+                "tranquillo": 2
+            },
+            "question1Key": "game.ximena.q1",
+            "question2Key": "game.ximena.q2"
+        },
+        {
+            "id": "macarena",
+            "name": "Macarena",
+            "image": "../images/partecipanti/bormio/macarena.png",
+            "options": [
+                "Macarena",
+                "Valentina",
+                "Ximena",
+                "Ilaria",
+                "Tamires",
+                "Clara"
+            ],
+            "ratings": {
+                "alcolizzato": 3,
+                "sportivo": 5,
+                "locura": 3,
+                "tranquillo": 3
+            },
+            "question1Key": "game.macarena.q1",
+            "question2Key": "game.macarena.q2"
+        },
+        {
+            "id": "andrea",
+            "name": "Andrea",
+            "image": "../images/partecipanti/bormio/andrea.jpeg",
+            "options": [
+                "Andrea",
+                "Giacomo",
+                "Fady",
+                "Alvar",
+                "Nadi",
+                "Roberto"
+            ],
+            "ratings": {
+                "alcolizzato": 5,
+                "sportivo": 3,
+                "locura": 3,
+                "tranquillo": 3
+            },
+            "question1Key": "game.andrea.q1",
+            "question2Key": "game.andrea.q2"
+        }
+    ]
+}
