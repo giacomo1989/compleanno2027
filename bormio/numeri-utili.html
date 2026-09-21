@@ -1,34 +1,78 @@
 <!DOCTYPE html>
-<html>
- <head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width,initial-scale=1" name="viewport"/>
-  <link href="../css/style.css" rel="stylesheet"/>
- </head>
- <body data-root="..">
-  <div class="lang">
-   <button data-lang="it" onclick="setLanguage('it')">
-    IT
-   </button>
-   <button data-lang="es" onclick="setLanguage('es')">
-    ES
-   </button>
-  </div>
-  <section class="placeholder">
-   <main>
-    <a class="back" href="index.html">
-     &larr;
-    </a>
-    <div class="smallcap">
-     BORMIO
+<html lang="it">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Numeri utili · Bormio</title>
+    <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/numeri-utili.css" rel="stylesheet">
+</head>
+<body data-root="..">
+    <div class="lang">
+        <button data-lang="it" onclick="setLanguage('it')">IT</button>
+        <button data-lang="es" onclick="setLanguage('es')">ES</button>
     </div>
-    <h2 data-i18n="common.phone">
-    </h2>
-    <div class="panel" data-i18n="placeholder">
-    </div>
-   </main>
-  </section>
-  <script src="../js/i18n.js">
-  </script>
- </body>
+
+    <section class="useful-page">
+        <header class="top useful-top">
+            <a class="back" href="index.html">←</a>
+        </header>
+
+        <main class="useful-main">
+            <section class="useful-hero">
+                <div class="smallcap">BORMIO</div>
+                <h1 data-i18n="useful.title"></h1>
+                <p data-i18n="useful.subtitle"></p>
+            </section>
+
+            <section class="emergency-card">
+                <div class="emergency-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24"><path d="M6 18h12M8 18v-6a4 4 0 0 1 8 0v6M12 2v3M4.9 5.9 7 8M19.1 5.9 17 8M2 12h3M19 12h3"/></svg>
+                </div>
+                <div class="emergency-copy">
+                    <div class="card-kicker" data-i18n="useful.emergency"></div>
+                    <div class="emergency-number">112</div>
+                    <p data-i18n="useful.emergencyServices"></p>
+                </div>
+                <a class="action action-danger" href="tel:112" data-i18n="useful.call112"></a>
+            </section>
+
+            <section class="useful-grid">
+                <article class="useful-card">
+                    <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m3 20 6-10 4 6 2-3 6 7H3Z"/><path d="m8 14 1-2 1.2 2 1.2-1.5"/></svg></div>
+                    <div class="card-body"><div class="card-kicker" data-i18n="useful.skiRescue"></div><h2>Bormio</h2><div class="card-number">112</div><p data-i18n="useful.bormioSkiNote"></p></div>
+                    <a class="action" href="tel:112" data-i18n="useful.call112"></a>
+                </article>
+
+                <article class="useful-card">
+                    <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m3 20 6-10 4 6 2-3 6 7H3Z"/><path d="m8 14 1-2 1.2 2 1.2-1.5"/></svg></div>
+                    <div class="card-body"><div class="card-kicker" data-i18n="useful.skiRescue"></div><h2>Santa Caterina</h2><div class="card-number">112</div><p data-i18n="useful.santaSkiNote"></p></div>
+                    <a class="action" href="tel:112" data-i18n="useful.call112"></a>
+                </article>
+
+                <article class="useful-card">
+                    <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 3h6v6h6v6h-6v6H9v-6H3V9h6V3Z"/></svg></div>
+                    <div class="card-body"><div class="card-kicker" data-i18n="useful.er"></div><h2 data-i18n="useful.sondalo"></h2><div class="card-number compact">0342 808250</div><p>Via Zubiani 33 · Sondalo (SO)<br><span data-i18n="useful.open24"></span></p></div>
+                    <div class="card-actions"><a class="action" href="tel:+390342808250" data-i18n="useful.call"></a><a class="action" href="https://www.google.com/maps/search/?api=1&query=Pronto+Soccorso+Sondalo+Via+Zubiani+33" target="_blank" rel="noopener" data-i18n="useful.map"></a></div>
+                </article>
+
+                <article class="useful-card">
+                    <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 3v5a6 6 0 0 0 12 0V3M9 3v4M15 3v4M18 14v2a4 4 0 0 0 4 4"/><circle cx="22" cy="20" r="1"/></svg></div>
+                    <div class="card-body"><div class="card-kicker" data-i18n="useful.medical"></div><h2 data-i18n="useful.continuity"></h2><div class="card-number">116 117</div><p data-i18n="useful.medicalNote"></p></div>
+                    <a class="action" href="tel:116117" data-i18n="useful.call"></a>
+                </article>
+
+                <article class="useful-card">
+                    <div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m3 20 7-14 4 8 2-3 5 9H3Z"/><path d="M17 5v6M14 8h6"/></svg></div>
+                    <div class="card-body"><div class="card-kicker" data-i18n="useful.alpine"></div><h2 data-i18n="useful.mountainEmergency"></h2><div class="card-number">112</div><p data-i18n="useful.alpineNote"></p></div>
+                    <a class="action" href="tel:112" data-i18n="useful.call112"></a>
+                </article>
+            </section>
+
+            <div class="useful-footer" data-i18n="useful.footer"></div>
+        </main>
+    </section>
+
+    <script src="../js/i18n.js"></script>
+</body>
 </html>
