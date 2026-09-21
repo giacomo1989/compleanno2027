@@ -79,3 +79,42 @@
 .person-tile.failed.revealed .mystery {
     display: none;
 }
+
+
+/* WHO'S WHO v5 — blur richiesti */
+.person-tile.unplayed .tile-photo img,
+.quiz-photo.hard img {
+    filter: blur(50px);
+    transform: scale(1.16);
+}
+
+.quiz-photo.soft img,
+.person-tile.failed:not(.revealed) .tile-photo img {
+    filter: blur(19px);
+    transform: scale(1.10);
+}
+
+/* Le persone indovinate e il reveal finale sono nitidi. */
+.person-tile.guessed .tile-photo img,
+.person-tile.revealed .tile-photo img,
+.quiz-photo.clear img {
+    filter: none;
+    transform: none;
+}
+
+.person-tile.guessed .mystery,
+.person-tile.revealed .mystery {
+    display: none;
+}
+
+/* Il CTA finale appare solo dopo aver giocato tutte le persone
+   e scompare definitivamente dopo il click. */
+.final-reveal-action {
+    display: flex;
+    justify-content: center;
+    margin: 28px 0 8px;
+}
+
+.final-reveal-button {
+    width: min(100%, 430px);
+}

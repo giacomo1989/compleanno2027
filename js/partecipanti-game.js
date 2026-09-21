@@ -1,11 +1,12 @@
-const STORAGE_KEY = "gb_whos_who_bormio_v4";
+const STORAGE_KEY = "gb_whos_who_bormio_v5";
 
 let people = [];
 let translations = {};
 let activeId = null;
 let state = {
     score: 0,
-    results: {}
+    results: {},
+    finalRevealed: false
 };
 
 function currentLanguage() {
@@ -37,12 +38,17 @@ function loadState() {
         const saved = JSON.parse(localStorage.getItem(STORAGE_KEY));
 
         if (saved && saved.results && typeof saved.score === "number") {
-            state = saved;
+            state = {
+                score: saved.score,
+                results: saved.results,
+                finalRevealed: Boolean(saved.finalRevealed)
+            };
         }
     } catch (_) {
         state = {
             score: 0,
-            results: {}
+            results: {},
+            finalRevealed: false
         };
     }
 }
@@ -113,7 +119,9 @@ function updateStatus() {
         `${formatScore(state.score)} / ${people.length}`;
     document.getElementById("pointsLabel").textContent = t("game.points");
     document.getElementById("gridInstruction").textContent =
-        allCompleted() ? t("game.finalText") : t("game.chooseFace");
+        allCompleted() && state.finalRevealed
+            ? t("game.finalText")
+            : t("game.chooseFace");
 }
 
 function renderGrid() {
@@ -125,6 +133,7 @@ function renderGrid() {
     updateStatus();
 
     const finished = allCompleted();
+    const finalRevealed = finished && state.finalRevealed;
     const grid = document.getElementById("peopleGrid");
 
     grid.innerHTML = people.map((person, index) => {
@@ -146,10 +155,10 @@ function renderGrid() {
             revealPhoto = true;
         } else if (result && result.status === "failed") {
             cssClass = "failed";
-            name = finished ? person.name : "???";
+            name = finalRevealed ? person.name : "???";
             status = `✕ ${t("game.notGuessed")}`;
             disabled = true;
-            revealPhoto = finished;
+            revealPhoto = finalRevealed;
         }
 
         return `
@@ -178,8 +187,32 @@ function renderGrid() {
             openPerson(button.dataset.person);
         });
     });
-}
 
+    const oldAction = document.getElementById("finalRevealAction");
+
+    if (oldAction) {
+        oldAction.remove();
+    }
+
+    if (finished && !state.finalRevealed) {
+        const action = document.createElement("div");
+        action.id = "finalRevealAction";
+        action.className = "final-reveal-action";
+        action.innerHTML = `
+            <button id="revealFinalResult" class="quiz-action final-reveal-button" type="button">
+                ${t("game.finalCta")}
+            </button>
+        `;
+
+        grid.insertAdjacentElement("afterend", action);
+
+        document.getElementById("revealFinalResult").addEventListener("click", () => {
+            state.finalRevealed = true;
+            saveState();
+            renderGrid();
+        });
+    }
+}
 function openPerson(id) {
     const person = people.find(item => item.id === id);
 
