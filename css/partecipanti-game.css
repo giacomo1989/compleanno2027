@@ -69,3 +69,17 @@
     .quiz-photo { max-height:430px; }
     .answers { grid-template-columns:1fr; }
 }
+
+
+/* Final state happens directly inside the original grid. */
+.person-tile.failed.game-finished img {
+    filter: none;
+}
+
+.person-tile.failed.game-finished .mystery {
+    display: none;
+}
+
+.person-tile.game-finished {
+    cursor: default;
+}

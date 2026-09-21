@@ -92,53 +92,69 @@ function updateStatus() {
     document.getElementById("score").textContent = `${formatScore(state.score)} / ${people.length}`;
     document.getElementById("pointsLabel").textContent = t("game.points");
     document.getElementById("gridInstruction").textContent = t("game.chooseFace");
-    document.getElementById("resetGame").textContent = t("game.restart");
 }
 
 function renderGrid() {
     activeId = null;
     document.getElementById("quizView").classList.add("hidden");
-    document.getElementById("finalView").classList.add("hidden");
     document.getElementById("gridView").classList.remove("hidden");
     updateStatus();
 
-    document.getElementById("peopleGrid").innerHTML = people.map((person,index) => {
+    const finished = allCompleted();
+
+    document.getElementById("peopleGrid").innerHTML = people.map((person, index) => {
         const result = state.results[person.id];
-        let cls = "unplayed";
+
+        let cssClass = "unplayed";
         let name = "???";
         let status = t("game.unplayed");
         let disabled = "";
 
         if (result && result.status === "guessed") {
-            cls = "guessed";
+            cssClass = "guessed";
             name = person.name;
-            status = result.points === 1 ? `✓ ${t("game.firstHit")}` : `✓ ${t("game.secondHit")}`;
+            status = result.points === 1
+                ? `✓ ${t("game.firstHit")}`
+                : `✓ ${t("game.secondHit")}`;
             disabled = "disabled";
         } else if (result && result.status === "failed") {
-            cls = "failed";
+            cssClass = "failed";
+            name = finished ? person.name : "???";
             status = `✕ ${t("game.notGuessed")}`;
             disabled = "disabled";
         }
 
-        return `<button class="person-tile ${cls}" type="button" data-person="${person.id}" ${disabled}
-            aria-label="${name === "???" ? `${t("game.character")} ${index+1}` : name}">
-            <div class="tile-photo"><img src="${person.image}" alt=""><span class="mystery">?</span></div>
-            <div class="tile-body"><span class="tile-name">${name}</span><span class="tile-status">${status}</span></div>
-        </button>`;
+        if (finished) {
+            disabled = "disabled";
+        }
+
+        return `
+            <button
+                class="person-tile ${cssClass} ${finished ? "game-finished" : ""}"
+                type="button"
+                data-person="${person.id}"
+                ${disabled}
+                aria-label="${name === "???" ? `${t("game.character")} ${index + 1}` : name}"
+            >
+                <div class="tile-photo">
+                    <img src="${person.image}" alt="${finished || result?.status === "guessed" ? person.name : ""}">
+                    <span class="mystery">?</span>
+                </div>
+
+                <div class="tile-body">
+                    <span class="tile-name">${name}</span>
+                    <span class="tile-status">${status}</span>
+                </div>
+            </button>
+        `;
     }).join("");
 
     document.querySelectorAll("[data-person]:not([disabled])").forEach(button => {
         button.addEventListener("click", () => openPerson(button.dataset.person));
     });
 
-    const action = document.getElementById("finalAction");
-    if (allCompleted()) {
-        action.classList.remove("hidden");
-        action.innerHTML = `<button type="button" id="showFinal">${t("game.finalCta")}</button>`;
-        document.getElementById("showFinal").addEventListener("click", renderFinal);
-    } else {
-        action.classList.add("hidden");
-        action.innerHTML = "";
+    if (finished) {
+        document.getElementById("gridInstruction").textContent = t("game.finalText");
     }
 }
 
@@ -159,7 +175,6 @@ function renderQuiz() {
     const key = result.stage === 1 ? person.question1Key : person.question2Key;
 
     document.getElementById("gridView").classList.add("hidden");
-    document.getElementById("finalView").classList.add("hidden");
     const quiz = document.getElementById("quizView");
     quiz.classList.remove("hidden");
     quiz.innerHTML = `<article class="quiz-card">
@@ -231,47 +246,26 @@ function renderFailure(person) {
     document.getElementById("backToGrid").addEventListener("click",renderGrid);
 }
 
-function renderFinal() {
-    document.getElementById("gridView").classList.add("hidden");
-    document.getElementById("quizView").classList.add("hidden");
-    const final = document.getElementById("finalView");
-    final.classList.remove("hidden");
-
-    const cards = people.map(person => {
-        const result = state.results[person.id] || {status:"failed",points:0};
-        const label = result.status === "guessed"
-            ? (result.points === 1 ? `✓ ${t("game.firstHit")}` : `✓ ${t("game.secondHit")}`)
-            : `✕ ${t("game.notGuessed")}`;
-        return `<article class="final-person ${result.status}">
-            <img src="${person.image}" alt="${person.name}">
-            <div class="body"><div class="result-line">${label}</div><h3>${person.name}</h3>${ratingBlock(person)}</div>
-        </article>`;
-    }).join("");
-
-    final.innerHTML = `<div class="final-score">
-        <small>${t("game.finalResult")}</small>
-        <strong>${formatScore(state.score)} / ${people.length}</strong>
-        <p>${t("game.finalText")}</p>
-    </div><div class="final-grid">${cards}</div>`;
-}
 
 async function refreshGameLanguage() {
     await loadGameTranslations();
-    if (!document.getElementById("finalView").classList.contains("hidden")) renderFinal();
-    else if (activeId) {
-        const p=people.find(x=>x.id===activeId), r=p ? state.results[p.id] : null;
-        if (p && r?.status==="guessed") renderReveal(p,r);
-        else if (p && r?.status==="failed") renderFailure(p);
-        else renderQuiz();
-    } else renderGrid();
+
+    if (activeId) {
+        const person = people.find(item => item.id === activeId);
+        const result = person ? state.results[person.id] : null;
+
+        if (person && result && result.status === "guessed") {
+            renderReveal(person, result);
+        } else if (person && result && result.status === "failed") {
+            renderFailure(person);
+        } else {
+            renderQuiz();
+        }
+    } else {
+        renderGrid();
+    }
 }
 
-document.getElementById("resetGame").addEventListener("click", () => {
-    if (window.confirm(t("game.restartConfirm"))) {
-        localStorage.removeItem(STORAGE_KEY);
-        window.location.reload();
-    }
-});
 
 const originalSetLanguage = window.setLanguage;
 if (typeof originalSetLanguage === "function") {
