@@ -1,34 +1,100 @@
 <!DOCTYPE html>
-<html>
- <head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width,initial-scale=1" name="viewport"/>
-  <link href="../css/style.css" rel="stylesheet"/>
- </head>
- <body data-root="..">
-  <div class="lang">
-   <button data-lang="it" onclick="setLanguage('it')">
-    IT
-   </button>
-   <button data-lang="es" onclick="setLanguage('es')">
-    ES
-   </button>
-  </div>
-  <section class="placeholder">
-   <main>
-    <a class="back" href="index.html">
-     &larr;
-    </a>
-    <div class="smallcap">
-     BORMIO
+<html lang="it">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width,initial-scale=1" name="viewport">
+    <title>Info pratiche · Bormio</title>
+    <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/info.css" rel="stylesheet">
+</head>
+<body data-root="..">
+    <div class="lang">
+        <button data-lang="it" onclick="setLanguage('it')">IT</button>
+        <button data-lang="es" onclick="setLanguage('es')">ES</button>
     </div>
-    <h2 data-i18n="common.info">
-    </h2>
-    <div class="panel" data-i18n="placeholder">
-    </div>
-   </main>
-  </section>
-  <script src="../js/i18n.js">
-  </script>
- </body>
+
+    <section class="info-page">
+        <header class="top">
+            <a class="back" href="index.html">←</a>
+        </header>
+
+        <main class="info-main">
+            <section class="info-hero">
+                <div class="smallcap">BORMIO</div>
+                <h1 data-i18n="info.title">Info pratiche</h1>
+                <p data-i18n="info.subtitle">Link utili e informazioni aggiornate sul territorio.</p>
+            </section>
+
+            <section class="info-grid">
+                <a class="info-card" href="https://www.bormio.eu/it/live-info/meteo" target="_blank" rel="noopener">
+                    <img src="../images/info/meteo-bormio.png" alt="Meteo Bormio">
+                    <div class="info-overlay"></div>
+                    <div class="info-content">
+                        <span class="info-icon">☀</span>
+                        <h2 data-i18n="info.weatherTitle">Meteo Bormio</h2>
+                        <p data-i18n="info.weatherText">Previsioni e condizioni aggiornate.</p>
+                        <span class="info-button" data-i18n="info.weatherButton">APRI METEO →</span>
+                    </div>
+                </a>
+
+                <a class="info-card" href="https://www.bormioski.eu/webcam-bormio" target="_blank" rel="noopener">
+                    <img src="../images/info/webcam.png" alt="Webcam Bormio">
+                    <div class="info-overlay"></div>
+                    <div class="info-content">
+                        <span class="info-icon">◉</span>
+                        <h2 data-i18n="info.webcamTitle">Webcam live</h2>
+                        <p data-i18n="info.webcamText">Guarda Bormio e le piste dal vivo.</p>
+                        <span class="info-button" data-i18n="info.webcamButton">VEDI WEBCAM →</span>
+                    </div>
+                </a>
+
+                <a class="info-card" href="https://www.bormio.eu/it/live-info/impianti-e-piste" target="_blank" rel="noopener">
+                    <img src="../images/info/piste-impianti.png" alt="Piste e impianti Bormio">
+                    <div class="info-overlay"></div>
+                    <div class="info-content">
+                        <span class="info-icon">◇</span>
+                        <h2 data-i18n="info.slopesTitle">Piste &amp; impianti</h2>
+                        <p data-i18n="info.slopesText">Stato di apertura di piste e impianti.</p>
+                        <span class="info-button" data-i18n="info.slopesButton">VERIFICA STATO →</span>
+                    </div>
+                </a>
+
+                <a class="info-card" href="https://www.santacaterinaimpianti.it/apertura-impianti/" target="_blank" rel="noopener">
+                    <img src="../images/info/santa-caterina.png" alt="Santa Caterina Valfurva">
+                    <div class="info-overlay"></div>
+                    <div class="info-content">
+                        <span class="info-icon">△</span>
+                        <h2 data-i18n="info.santaTitle">Santa Caterina live</h2>
+                        <p data-i18n="info.santaText">Condizioni, piste e impianti di Santa Caterina.</p>
+                        <span class="info-button" data-i18n="info.santaButton">VAI A SANTA CATERINA →</span>
+                    </div>
+                </a>
+
+                <a class="info-card" href="https://www.bormio.eu/it" target="_blank" rel="noopener">
+                    <img src="../images/info/bormio-info.png" alt="Bormio">
+                    <div class="info-overlay"></div>
+                    <div class="info-content">
+                        <span class="info-icon">i</span>
+                        <h2 data-i18n="info.bormioTitle">Bormio info</h2>
+                        <p data-i18n="info.bormioText">Eventi, servizi, attività e informazioni sul territorio.</p>
+                        <span class="info-button" data-i18n="info.bormioButton">SITO UFFICIALE →</span>
+                    </div>
+                </a>
+
+                <a class="info-card" href="https://www.bormio.eu/it/brochure/mappa-di-bormio" target="_blank" rel="noopener">
+                    <img src="../images/info/mappa-bormio.png" alt="Mappa di Bormio">
+                    <div class="info-overlay"></div>
+                    <div class="info-content">
+                        <span class="info-icon">⌖</span>
+                        <h2 data-i18n="info.mapTitle">Mappa di Bormio</h2>
+                        <p data-i18n="info.mapText">Centro storico, frazioni e principali punti d'interesse.</p>
+                        <span class="info-button" data-i18n="info.mapButton">APRI MAPPA →</span>
+                    </div>
+                </a>
+            </section>
+        </main>
+    </section>
+
+    <script src="../js/i18n.js"></script>
+</body>
 </html>
