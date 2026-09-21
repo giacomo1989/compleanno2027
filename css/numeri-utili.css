@@ -1,0 +1,54 @@
+.useful-page {
+    min-height: 100vh;
+    color: #f8f1e7;
+    background:
+        linear-gradient(180deg, rgba(7, 12, 17, .28) 0%, rgba(7, 12, 17, .78) 32%, #071016 72%),
+        url('../images/bormio-bg.jpg') center top / cover fixed no-repeat;
+}
+
+.useful-top { position: relative; z-index: 3; }
+.useful-main { width: min(1180px, calc(100% - 40px)); margin: 0 auto; padding: 20px 0 70px; }
+.useful-hero { text-align: center; padding: 30px 10px 36px; }
+.useful-hero .smallcap, .card-kicker { color: #e8bd78; letter-spacing: .26em; text-transform: uppercase; font-size: 12px; font-weight: 700; }
+.useful-hero h1 { margin: 8px 0 8px; font-family: Georgia, 'Times New Roman', serif; font-size: clamp(46px, 7vw, 76px); line-height: .98; font-weight: 400; color: #f3cf92; }
+.useful-hero p { margin: 0; font-family: Georgia, 'Times New Roman', serif; font-size: clamp(17px, 2.2vw, 24px); color: rgba(255,255,255,.9); }
+
+.emergency-card, .useful-card { backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+.emergency-card { display: grid; grid-template-columns: 120px 1fr auto; gap: 28px; align-items: center; padding: 30px 34px; border: 1px solid #ff5c50; border-radius: 22px; background: linear-gradient(110deg, rgba(85,13,13,.75), rgba(30,10,10,.72)); box-shadow: 0 15px 45px rgba(0,0,0,.24); }
+.emergency-icon { width: 90px; height: 90px; display: grid; place-items: center; color: #ff4c43; }
+.emergency-icon svg, .card-icon svg { width: 100%; height: 100%; fill: none; stroke: currentColor; stroke-width: 1.55; stroke-linecap: round; stroke-linejoin: round; }
+.emergency-card .card-kicker { color: #ff6258; }
+.emergency-number { font-family: Georgia, 'Times New Roman', serif; font-size: 72px; line-height: .9; margin: 8px 0; }
+.emergency-copy p, .card-body p { margin: 0; color: rgba(255,255,255,.78); line-height: 1.45; }
+
+.useful-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; margin-top: 20px; }
+.useful-card { display: grid; grid-template-columns: 92px 1fr; grid-template-rows: 1fr auto; gap: 18px 24px; padding: 28px; min-height: 260px; border: 1px solid rgba(232,189,120,.32); border-radius: 20px; background: rgba(7,14,18,.72); }
+.card-icon { width: 76px; height: 76px; padding: 17px; border: 1.5px solid #e8bd78; border-radius: 50%; color: #e8bd78; }
+.card-body h2 { margin: 5px 0 7px; font-family: Georgia, 'Times New Roman', serif; font-size: 25px; font-weight: 400; }
+.card-number { margin: 3px 0 8px; color: #efc786; font-family: Georgia, 'Times New Roman', serif; font-size: 49px; line-height: 1; }
+.card-number.compact { font-size: clamp(31px, 3.4vw, 45px); }
+.card-actions { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.useful-card > .action { grid-column: 1 / -1; }
+.action { min-height: 52px; display: flex; align-items: center; justify-content: center; padding: 12px 22px; border: 1px solid #e8bd78; border-radius: 999px; color: #efc786; text-decoration: none; text-transform: uppercase; letter-spacing: .15em; font-size: 12px; font-weight: 700; transition: .2s ease; }
+.action:hover { background: rgba(232,189,120,.12); transform: translateY(-1px); }
+.action-danger { min-width: 220px; border-color: #ff6a60; color: #fff1ed; background: rgba(199,39,31,.26); }
+.action-danger:hover { background: rgba(199,39,31,.4); }
+.useful-footer { margin: 44px auto 0; text-align: center; color: rgba(255,255,255,.65); letter-spacing: .34em; text-transform: uppercase; font-size: 11px; }
+
+@media (max-width: 760px) {
+    .useful-page { background-attachment: scroll; }
+    .useful-main { width: min(100% - 24px, 620px); padding-top: 0; }
+    .useful-hero { padding: 24px 8px 28px; }
+    .useful-hero h1 { font-size: 48px; }
+    .emergency-card { grid-template-columns: 68px 1fr; gap: 14px 18px; padding: 22px 20px; }
+    .emergency-icon { width: 62px; height: 62px; }
+    .emergency-number { font-size: 58px; }
+    .emergency-card .action { grid-column: 1 / -1; width: 100%; }
+    .useful-grid { grid-template-columns: 1fr; gap: 14px; }
+    .useful-card { grid-template-columns: 70px 1fr; min-height: 0; padding: 22px 18px; gap: 15px 17px; }
+    .card-icon { width: 62px; height: 62px; padding: 14px; }
+    .card-body h2 { font-size: 23px; }
+    .card-number { font-size: 43px; }
+    .card-number.compact { font-size: 32px; }
+    .action { min-height: 48px; }
+}
