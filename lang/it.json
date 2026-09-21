@@ -142,5 +142,10 @@
     "game.macarena.q1": "Chi è quella persona che alle 15 gioca a padel ancora addormentata?",
     "game.macarena.q2": "Chi è quella persona che è la più social di tutte?",
     "game.andrea.q1": "Chi è quella persona che considera una magnum la proporzione giusta da bere in due?",
-    "game.andrea.q2": "Chi è quella persona che non conferma e non smentisce?"
+    "game.andrea.q2": "Chi è quella persona che non conferma e non smentisce?",
+    "game.played": "GIOCATI",
+    "game.chooseFace": "Scegli una faccia da scoprire.",
+    "game.unplayed": "DA SCOPRIRE",
+    "game.backGrid": "TORNA ALLA GRIGLIA",
+    "game.finalCta": "SCOPRI IL RISULTATO FINALE →"
 }

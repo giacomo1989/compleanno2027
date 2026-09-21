@@ -113,7 +113,7 @@
     "info.mapButton": "ABRIR MAPA →",
     "game.kicker": "GIACOMO'S BIRTHDAY · BORMIO",
     "game.title": "Who's Who?",
-    "game.subtitle": "¿Descubre los partecipantes del viaje?",
+    "game.subtitle": "Descubre los partecipantes del viaje",
     "game.character": "PERSONAJE",
     "game.points": "PUNTOS",
     "game.clue": "PISTA",
@@ -142,5 +142,10 @@
     "game.macarena.q1": "¿Quién es la persona que a las 15 juega al pádel todavía dormida?",
     "game.macarena.q2": "¿Quién es la persona más social de todas?",
     "game.andrea.q1": "¿Quién es la persona que considera que una magnum es la proporción justa para beber entre dos?",
-    "game.andrea.q2": "¿Quién es la persona que ni confirma ni desmiente?"
+    "game.andrea.q2": "¿Quién es la persona que ni confirma ni desmiente?",
+    "game.played": "JUGADOS",
+    "game.chooseFace": "Elige una cara por descubrir.",
+    "game.unplayed": "POR DESCUBRIR",
+    "game.backGrid": "VOLVER A LA CUADRÍCULA",
+    "game.finalCta": "DESCUBRE EL RESULTADO FINAL →"
 }
