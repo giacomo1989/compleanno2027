@@ -217,11 +217,11 @@ h1 {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(
-        180deg,
-        #03102022,
-        #03102055 42%,
-        #061326f5 78%
+    //background: linear-gradient(
+    //    180deg,
+    //    #03102022,
+    //    #03102055 42%,
+    //    #061326f5 78%
     );
 }
 
