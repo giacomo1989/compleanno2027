@@ -1,0 +1,73 @@
+{
+    "spa": [
+        {
+            "id": "bagni-vecchi",
+            "name": "QC Terme Bagni Vecchi",
+            "location": "Valdidentro · Bagni Vecchi",
+            "image": "../images/terme/bagni-vecchi.png",
+            "descriptionKey": "spa.bagniVecchiText",
+            "website": "https://www.qcterme.com/it/destinazioni/bormio/qc-spa-bagni-vecchi",
+            "maps": "https://www.google.com/maps/search/?api=1&query=QC+Terme+Bagni+Vecchi+Bormio"
+        },
+        {
+            "id": "bagni-nuovi",
+            "name": "QC Terme Bagni Nuovi",
+            "location": "Valdidentro · Via Bagni Nuovi 7",
+            "image": "../images/terme/bagni-nuovi.png",
+            "descriptionKey": "spa.bagniNuoviText",
+            "website": "https://www.qcterme.com/it/destinazioni/bormio/qc-spa-bagni-nuovi",
+            "maps": "https://www.google.com/maps/search/?api=1&query=QC+Terme+Bagni+Nuovi+Bormio"
+        },
+        {
+            "id": "bormio-terme",
+            "name": "Bormio Terme",
+            "location": "Bormio · Via Stelvio 14",
+            "image": "../images/terme/bormio-terme.png",
+            "descriptionKey": "spa.bormioTermeText",
+            "website": "https://www.bormioterme.it/",
+            "maps": "https://www.google.com/maps/search/?api=1&query=Bormio+Terme+Via+Stelvio+14"
+        }
+    ],
+    "apresSki": [
+        {
+            "id": "be-white",
+            "name": "Be White Après Ski & Restaurant",
+            "area": "Bormio",
+            "location": "Bormio · Partenza cabinovia Bormio 2000",
+            "image": "../images/terme/be-white.png",
+            "descriptionKey": "spa.beWhiteText",
+            "website": "https://www.bewhitebormio.it/",
+            "maps": "https://www.google.com/maps/search/?api=1&query=Be+White+Apres+Ski+Bormio"
+        },
+        {
+            "id": "ciuk",
+            "name": "Ciuk Après Ski",
+            "area": "Bormio",
+            "location": "Valdisotto · Località Ciuk",
+            "image": "../images/terme/ciuk.png",
+            "descriptionKey": "spa.ciukText",
+            "website": "https://www.baitademario.com/ciuk-apres-ski/",
+            "maps": "https://www.google.com/maps/search/?api=1&query=Ciuk+Apres+Ski+Bormio"
+        },
+        {
+            "id": "skianta",
+            "name": "Skianta Café",
+            "area": "Bormio",
+            "location": "Bormio · Piazzetta Martino Anzi 8",
+            "image": "../images/terme/skianta.png",
+            "descriptionKey": "spa.skiantaText",
+            "website": "",
+            "maps": "https://www.google.com/maps/search/?api=1&query=Skianta+Cafe+Bormio"
+        },
+        {
+            "id": "la-terrazza",
+            "name": "La Terrazza Santa Caterina",
+            "area": "Santa Caterina",
+            "location": "Santa Caterina Valfurva · Via Santa Caterina 39",
+            "image": "../images/terme/la-terrazza.png",
+            "descriptionKey": "spa.terrazzaText",
+            "website": "",
+            "maps": "https://www.google.com/maps/search/?api=1&query=La+Terrazza+Santa+Caterina+Valfurva"
+        }
+    ]
+}
