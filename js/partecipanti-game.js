@@ -82,7 +82,7 @@ function ratingBlock(person) {
         ["🍾", "game.alcohol", "alcolizzato"],
         ["⛷", "game.sport", "sportivo"],
         ["🔥", "game.crazy", "locura"],
-        ["☾", "game.calm", "tranquillo"]
+        ["🕺", "game.calm", "tranquillo"]
     ];
 
     return `
@@ -177,6 +177,15 @@ function renderGrid() {
                 <div class="tile-body">
                     <span class="tile-name">${name}</span>
                     <span class="tile-status">${status}</span>
+
+                    ${finalRevealed ? `
+                        <div class="tile-ratings">
+                            <div><span>🍾 ${t("game.alcohol")}</span><b>${stars(person.ratings.alcolizzato)}</b></div>
+                            <div><span>⛷ ${t("game.sport")}</span><b>${stars(person.ratings.sportivo)}</b></div>
+                            <div><span>🔥 ${t("game.crazy")}</span><b>${stars(person.ratings.locura)}</b></div>
+                            <div><span>🕺 ${t("game.calm")}</span><b>${stars(person.ratings.tranquillo)}</b></div>
+                        </div>
+                    ` : ""}
                 </div>
             </button>
         `;
