@@ -1,0 +1,268 @@
+/* =========================================================
+   BORMIO · TERME & APRÈS-SKI
+========================================================= */
+
+.spa-page {
+    min-height: 100vh;
+    background:
+        linear-gradient(180deg, rgba(4, 10, 15, .30), rgba(4, 10, 15, .94) 500px),
+        url("../images/bormio-bg.jpg") center top / cover fixed;
+    color: #f6efe4;
+}
+
+.spa-page .top {
+    position: relative;
+    z-index: 3;
+}
+
+.spa-main {
+    width: min(1380px, calc(100% - 48px));
+    margin: 0 auto;
+    padding: 20px 0 80px;
+}
+
+.spa-hero {
+    padding: 18px 16px 42px;
+    text-align: left;
+}
+
+.spa-hero .smallcap {
+    color: #e8bf7a;
+    letter-spacing: .24em;
+    font-size: .78rem;
+    font-weight: 700;
+}
+
+.spa-hero h1 {
+    margin: 12px 0 4px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(3.1rem, 6vw, 5.6rem);
+    line-height: .96;
+    font-weight: 400;
+    color: #f3d19a;
+}
+
+.spa-hero p {
+    margin: 12px 0 0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.08rem, 2vw, 1.35rem);
+    color: rgba(255,255,255,.88);
+}
+
+.venue-section {
+    margin-top: 8px;
+}
+
+.apres-section {
+    margin-top: 42px;
+}
+
+.section-heading {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin: 0 10px 18px;
+}
+
+.section-icon {
+    width: 58px;
+    height: 58px;
+    display: grid;
+    place-items: center;
+    color: #f1ca88;
+    font-size: 2.1rem;
+}
+
+.section-heading h2 {
+    margin: 0;
+    color: #f1ca88;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.85rem;
+    font-weight: 400;
+    letter-spacing: .08em;
+}
+
+.section-heading p {
+    margin: 3px 0 0;
+    color: rgba(255,255,255,.78);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1rem;
+}
+
+.venue-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.venue-card {
+    overflow: hidden;
+    border: 1px solid rgba(232, 191, 122, .48);
+    border-radius: 15px;
+    background: rgba(7, 13, 18, .92);
+    box-shadow: 0 18px 48px rgba(0,0,0,.24);
+    backdrop-filter: blur(12px);
+}
+
+.venue-photo {
+    position: relative;
+    height: 220px;
+    overflow: hidden;
+    background: #111a20;
+}
+
+.venue-photo::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(0deg, rgba(6,12,16,.56), transparent 55%);
+    pointer-events: none;
+}
+
+.venue-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .35s ease;
+}
+
+.venue-card:hover .venue-photo img {
+    transform: scale(1.035);
+}
+
+.area-badge {
+    position: absolute;
+    z-index: 2;
+    top: 14px;
+    right: 14px;
+    padding: 7px 11px;
+    border: 1px solid rgba(244, 211, 156, .68);
+    border-radius: 999px;
+    background: rgba(6, 12, 16, .78);
+    color: #f3d19a;
+    font-size: .68rem;
+    font-weight: 700;
+    letter-spacing: .10em;
+    text-transform: uppercase;
+    backdrop-filter: blur(8px);
+}
+
+.venue-content {
+    padding: 19px 18px 17px;
+}
+
+.venue-content h3 {
+    margin: 0 0 7px;
+    color: #f3d19a;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.34rem;
+    font-weight: 400;
+}
+
+.venue-content p {
+    min-height: 48px;
+    margin: 0 0 13px;
+    color: rgba(255,255,255,.86);
+    font-size: .93rem;
+    line-height: 1.45;
+}
+
+.venue-location {
+    min-height: 36px;
+    color: rgba(255,255,255,.72);
+    font-size: .82rem;
+    line-height: 1.35;
+}
+
+.venue-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.venue-actions.single-action {
+    grid-template-columns: 1fr;
+}
+
+.venue-button {
+    min-height: 42px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #dcb46f;
+    border-radius: 7px;
+    color: #f1ca88;
+    text-decoration: none;
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .12em;
+    transition: background .2s ease, color .2s ease;
+}
+
+.venue-button:hover {
+    background: #e8bf7a;
+    color: #11171b;
+}
+
+@media (max-width: 980px) {
+    .venue-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 720px) {
+    .spa-page {
+        background-attachment: scroll;
+    }
+
+    .spa-main {
+        width: min(100% - 24px, 560px);
+        padding-top: 4px;
+    }
+
+    .spa-hero {
+        padding: 18px 5px 34px;
+    }
+
+    .spa-hero .smallcap {
+        font-size: .68rem;
+        letter-spacing: .18em;
+    }
+
+    .spa-hero h1 {
+        font-size: clamp(3rem, 14vw, 4.4rem);
+    }
+
+    .section-heading {
+        margin-left: 2px;
+        gap: 11px;
+    }
+
+    .section-icon {
+        width: 44px;
+        height: 44px;
+        font-size: 1.65rem;
+    }
+
+    .section-heading h2 {
+        font-size: 1.45rem;
+    }
+
+    .section-heading p {
+        font-size: .88rem;
+    }
+
+    .venue-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .venue-photo {
+        height: 205px;
+    }
+
+    .venue-content p {
+        min-height: 0;
+    }
+}
