@@ -4,15 +4,20 @@
 
 .spa-page {
     min-height: 100vh;
-    background:
-        linear-gradient(180deg, rgba(4, 10, 15, .30), rgba(4, 10, 15, .94) 500px),
-        url("../images/bormio-bg.jpg") center top / cover fixed;
+    background-color: #050b10;
+    background-image:
+        linear-gradient(
+            180deg,
+            rgba(4, 10, 15, 0.24) 0%,
+            rgba(4, 10, 15, 0.44) 30%,
+            rgba(4, 10, 15, 0.82) 58%,
+            rgba(4, 10, 15, 0.96) 100%
+        ),
+        url("../images/terme/terme-bg.png");
+    background-position: center top;
+    background-size: cover;
+    background-repeat: no-repeat;
     color: #f6efe4;
-}
-
-.spa-page .top {
-    position: relative;
-    z-index: 3;
 }
 
 .spa-main {
@@ -46,7 +51,7 @@
     margin: 12px 0 0;
     font-family: Georgia, "Times New Roman", serif;
     font-size: clamp(1.08rem, 2vw, 1.35rem);
-    color: rgba(255,255,255,.88);
+    color: rgba(255, 255, 255, .88);
 }
 
 .venue-section {
@@ -84,7 +89,7 @@
 
 .section-heading p {
     margin: 3px 0 0;
-    color: rgba(255,255,255,.78);
+    color: rgba(255, 255, 255, .78);
     font-family: Georgia, "Times New Roman", serif;
     font-size: 1rem;
 }
@@ -100,8 +105,9 @@
     border: 1px solid rgba(232, 191, 122, .48);
     border-radius: 15px;
     background: rgba(7, 13, 18, .92);
-    box-shadow: 0 18px 48px rgba(0,0,0,.24);
+    box-shadow: 0 18px 48px rgba(0, 0, 0, .24);
     backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
 }
 
 .venue-photo {
@@ -115,7 +121,11 @@
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(0deg, rgba(6,12,16,.56), transparent 55%);
+    background: linear-gradient(
+        0deg,
+        rgba(6, 12, 16, .56),
+        transparent 55%
+    );
     pointer-events: none;
 }
 
@@ -145,6 +155,7 @@
     letter-spacing: .10em;
     text-transform: uppercase;
     backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
 }
 
 .venue-content {
@@ -162,14 +173,14 @@
 .venue-content p {
     min-height: 48px;
     margin: 0 0 13px;
-    color: rgba(255,255,255,.86);
+    color: rgba(255, 255, 255, .86);
     font-size: .93rem;
     line-height: 1.45;
 }
 
 .venue-location {
     min-height: 36px;
-    color: rgba(255,255,255,.72);
+    color: rgba(255, 255, 255, .72);
     font-size: .82rem;
     line-height: 1.35;
 }
@@ -197,7 +208,9 @@
     font-size: .72rem;
     font-weight: 700;
     letter-spacing: .12em;
-    transition: background .2s ease, color .2s ease;
+    transition:
+        background .2s ease,
+        color .2s ease;
 }
 
 .venue-button:hover {
@@ -213,11 +226,23 @@
 
 @media (max-width: 720px) {
     .spa-page {
-        background-attachment: scroll;
+        background-color: #050b10;
+        background-image:
+            linear-gradient(
+                180deg,
+                rgba(4, 10, 15, .28) 0%,
+                rgba(4, 10, 15, .58) 32%,
+                rgba(4, 10, 15, .90) 62%,
+                rgba(4, 10, 15, .98) 100%
+            ),
+            url("../images/terme/terme-bg.png");
+        background-position: 62% top;
+        background-size: auto 760px;
+        background-repeat: no-repeat;
     }
 
     .spa-main {
-        width: min(100% - 24px, 560px);
+        width: min(calc(100% - 24px), 560px);
         padding-top: 4px;
     }
 
