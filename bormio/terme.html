@@ -1,34 +1,55 @@
 <!DOCTYPE html>
-<html>
- <head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width,initial-scale=1" name="viewport"/>
-  <link href="../css/style.css" rel="stylesheet"/>
- </head>
- <body data-root="..">
-  <div class="lang">
-   <button data-lang="it" onclick="setLanguage('it')">
-    IT
-   </button>
-   <button data-lang="es" onclick="setLanguage('es')">
-    ES
-   </button>
-  </div>
-  <section class="placeholder">
-   <main>
-    <a class="back" href="index.html">
-     &larr;
-    </a>
-    <div class="smallcap">
-     BORMIO
+<html lang="it">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width,initial-scale=1" name="viewport">
+    <title>Terme & Après-ski · Bormio</title>
+    <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/terme.css" rel="stylesheet">
+</head>
+<body data-root="..">
+    <div class="lang">
+        <button data-lang="it" onclick="setLanguage('it')">IT</button>
+        <button data-lang="es" onclick="setLanguage('es')">ES</button>
     </div>
-    <h2 data-i18n="bormio.spa">
-    </h2>
-    <div class="panel" data-i18n="placeholder">
-    </div>
-   </main>
-  </section>
-  <script src="../js/i18n.js">
-  </script>
- </body>
+
+    <section class="spa-page">
+        <header class="top">
+            <a class="back" href="index.html">←</a>
+        </header>
+
+        <main class="spa-main">
+            <section class="spa-hero">
+                <div class="smallcap">GIACOMO'S BIRTHDAY · BORMIO</div>
+                <h1 data-i18n="spa.title">Terme & Après-ski</h1>
+                <p data-i18n="spa.subtitle">Relax dopo lo sci. E poi si brinda.</p>
+            </section>
+
+            <section class="venue-section">
+                <div class="section-heading">
+                    <span class="section-icon">♨</span>
+                    <div>
+                        <h2 data-i18n="spa.thermalTitle">TERME</h2>
+                        <p data-i18n="spa.thermalSubtitle">Benessere, natura e panorami mozzafiato.</p>
+                    </div>
+                </div>
+                <div class="venue-grid" id="spaGrid"></div>
+            </section>
+
+            <section class="venue-section apres-section">
+                <div class="section-heading">
+                    <span class="section-icon">🥂</span>
+                    <div>
+                        <h2 data-i18n="spa.apresTitle">APRÈS-SKI</h2>
+                        <p data-i18n="spa.apresSubtitle">Musica, amici e il giusto brindisi dopo la neve.</p>
+                    </div>
+                </div>
+                <div class="venue-grid" id="apresGrid"></div>
+            </section>
+        </main>
+    </section>
+
+    <script src="../js/i18n.js"></script>
+    <script src="../js/terme.js"></script>
+</body>
 </html>
