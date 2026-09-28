@@ -1,34 +1,84 @@
 <!DOCTYPE html>
 <html>
- <head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width,initial-scale=1" name="viewport"/>
-  <link href="../css/style.css" rel="stylesheet"/>
- </head>
- <body data-root="..">
-  <div class="lang">
-   <button data-lang="it" onclick="setLanguage('it')">
-    IT
-   </button>
-   <button data-lang="es" onclick="setLanguage('es')">
-    ES
-   </button>
-  </div>
-  <section class="placeholder">
-   <main>
-    <a class="back" href="index.html">
-     &larr;
-    </a>
-    <div class="smallcap">
-     VENEZIA
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width,initial-scale=1" name="viewport"/>
+    <link href="../css/style.css" rel="stylesheet"/>
+    <link href="../css/hotel-venezia.css" rel="stylesheet"/>
+</head>
+<body data-root="..">
+    <div class="lang">
+        <button data-lang="it" onclick="setLanguage('it')">IT</button>
+        <button data-lang="es" onclick="setLanguage('es')">ES</button>
     </div>
-    <h2 data-i18n="common.hotel">
-    </h2>
-    <div class="panel" data-i18n="placeholder">
-    </div>
-   </main>
-  </section>
-  <script src="../js/i18n.js">
-  </script>
- </body>
+
+    <section class="venice-hotel-page">
+        <header class="venice-hotel-hero">
+            <a class="back venice-hotel-back" href="index.html">&larr;</a>
+            <div class="venice-hotel-hero-shade"></div>
+            <div class="venice-hotel-hero-copy">
+                <div class="smallcap">VENEZIA · 05—09 FEBBRAIO 2027</div>
+                <h1 data-i18n="veniceHotel.title">Come arrivare & Hotel</h1>
+                <div class="venice-hotel-city">VENEZIA</div>
+            </div>
+        </header>
+
+        <main class="venice-hotel-main">
+            <section class="venice-hotel-card hotel-overview">
+                <div class="hotel-copy">
+                    <div class="smallcap wine" data-i18n="hotel.ours">IL NOSTRO HOTEL</div>
+                    <h2>Combo Venezia</h2>
+                    <p class="hotel-address">Campo dei Gesuiti, 4878<br/>Cannaregio, 30121 Venezia</p>
+                    <a class="hotel-site-link" href="https://www.thisiscombo.com/it/citta/venezia" target="_blank" rel="noopener" data-i18n="veniceHotel.hotelWebsite">SITO UFFICIALE ↗</a>
+                    <p class="hotel-description" data-i18n="veniceHotel.hotelText"></p>
+                    <div class="stay-grid">
+                        <div><small data-i18n="veniceHotel.arrivalDate"></small><b>5 FEBBRAIO 2027</b></div>
+                        <div><small data-i18n="veniceHotel.departureDate"></small><b>9 FEBBRAIO 2027</b></div>
+                    </div>
+                </div>
+                <div class="hotel-gallery">
+                    <img src="../images/hotel-venezia/combo.jpg" alt="Combo Venezia"/>
+                    <img src="../images/hotel-venezia/combo-2.jpg" alt="Combo Venezia"/>
+                </div>
+            </section>
+
+            <section class="venice-hotel-card location-card">
+                <div class="section-heading-row">
+                    <div>
+                        <div class="smallcap wine" data-i18n="hotel.position">POSIZIONE</div>
+                        <h2>Campo dei Gesuiti · Cannaregio</h2>
+                    </div>
+                    <a class="wine-button" href="https://www.google.com/maps/search/?api=1&query=Combo%20Venezia%2C%20Campo%20dei%20Gesuiti%204878%2C%20Venezia" target="_blank" rel="noopener" data-i18n="hotel.maps"></a>
+                </div>
+                <div class="venice-map hotel-map">
+                    <iframe src="https://www.google.com/maps?q=Combo%20Venezia%2C%20Campo%20dei%20Gesuiti%204878%2C%20Venezia&output=embed" loading="lazy"></iframe>
+                </div>
+            </section>
+
+            <section class="venice-hotel-card arrival-card">
+                <div class="smallcap wine" data-i18n="hotel.arrive">COME ARRIVARE</div>
+                <div class="arrival-heading">
+                    <h2 data-i18n="veniceHotel.chooseArrival"></h2>
+                    <p data-i18n="veniceHotel.chooseArrivalText"></p>
+                </div>
+                <div id="arrivalTabs" class="arrival-tabs"></div>
+                <div id="transportOptions" class="transport-options"></div>
+                <div class="route-map-head">
+                    <div>
+                        <div class="smallcap wine" data-i18n="veniceHotel.routeMap">PERCORSO SELEZIONATO</div>
+                        <strong id="selectedRouteLabel"></strong>
+                    </div>
+                    <span id="selectedRouteMeta"></span>
+                </div>
+                <div class="venice-map route-map">
+                    <iframe id="veniceRouteMap" loading="lazy"></iframe>
+                </div>
+                <p class="route-note" data-i18n="veniceHotel.routeNote"></p>
+            </section>
+        </main>
+    </section>
+
+    <script src="../js/i18n.js"></script>
+    <script src="../js/hotel-venezia.js"></script>
+</body>
 </html>

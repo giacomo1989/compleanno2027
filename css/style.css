@@ -342,9 +342,10 @@ h1 {
     background:
         linear-gradient(
             180deg,
-            #03101f18 0%,
-            #03101f35 35%,
-            #061326c7 72%,
+            rgba(6, 19, 38, 0.05) 0%,
+            rgba(6, 19, 38, 0.12) 35%,
+            rgba(6, 19, 38, 0.55) 65%,
+            rgba(6, 19, 38, 0.90) 85%,
             #061326 100%
         ),
         url("../images/qc-house-exterior.jpeg") center top / cover no-repeat;

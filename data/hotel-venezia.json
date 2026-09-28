@@ -1,0 +1,129 @@
+{
+    "hotel": {
+        "name": "Combo Venezia",
+        "address": "Campo dei Gesuiti, 4878 · Cannaregio, 30121 Venezia",
+        "mapsQuery": "Combo Venezia, Campo dei Gesuiti 4878, Venezia"
+    },
+    "arrivals": [
+        {
+            "id": "airport",
+            "labelKey": "veniceHotel.arrivalAirport",
+            "subLabel": "VCE",
+            "options": [
+                {
+                    "id": "alilaguna",
+                    "titleKey": "veniceHotel.alilaguna",
+                    "descriptionKey": "veniceHotel.alilagunaAirportText",
+                    "metaKey": "veniceHotel.alilagunaAirportMeta",
+                    "badgeKey": "veniceHotel.recommended",
+                    "origin": "Venice Marco Polo Airport, Viale Galileo Galilei, Venezia",
+                    "destination": "Fondamente Nove, Venezia",
+                    "travelMode": "transit",
+                    "ticketUrl": "https://www.alilaguna.it/biglietti/tariffe",
+                    "infoUrl": "https://www.alilaguna.it/linee/linea-blu"
+                },
+                {
+                    "id": "bus-vaporetto",
+                    "titleKey": "veniceHotel.busVaporetto",
+                    "descriptionKey": "veniceHotel.busVaporettoText",
+                    "metaKey": "veniceHotel.busVaporettoMeta",
+                    "origin": "Venice Marco Polo Airport, Viale Galileo Galilei, Venezia",
+                    "destination": "Fondamente Nove, Venezia",
+                    "travelMode": "transit",
+                    "waypoint": "Piazzale Roma, Venezia",
+                    "ticketUrl": "https://www.veneziaunica.it/it/acquista-i-biglietti/trasporto-pubblico-a-venezia",
+                    "infoUrl": "https://www.google.com/maps/dir/?api=1&origin=Venice%20Marco%20Polo%20Airport&destination=Combo%20Venezia%2C%20Campo%20dei%20Gesuiti%204878%2C%20Venezia&travelmode=transit"
+                },
+                {
+                    "id": "water-taxi",
+                    "titleKey": "veniceHotel.waterTaxi",
+                    "descriptionKey": "veniceHotel.waterTaxiAirportText",
+                    "metaKey": "veniceHotel.waterTaxiMeta",
+                    "badgeKey": "veniceHotel.comfortable",
+                    "origin": "Venice Marco Polo Airport",
+                    "destination": "Combo Venezia, Campo dei Gesuiti 4878, Venezia",
+                    "travelMode": "transit",
+                    "infoUrl": "https://www.venicewatertaxi.it/"
+                }
+            ]
+        },
+        {
+            "id": "station",
+            "labelKey": "veniceHotel.arrivalStation",
+            "subLabel": "FERROVIA",
+            "options": [
+                {
+                    "id": "walk",
+                    "titleKey": "veniceHotel.walk",
+                    "descriptionKey": "veniceHotel.walkStationText",
+                    "metaKey": "veniceHotel.walkStationMeta",
+                    "badgeKey": "veniceHotel.free",
+                    "origin": "Venezia Santa Lucia railway station",
+                    "destination": "Combo Venezia, Campo dei Gesuiti 4878, Venezia",
+                    "travelMode": "walking"
+                },
+                {
+                    "id": "vaporetto",
+                    "titleKey": "veniceHotel.vaporetto",
+                    "descriptionKey": "veniceHotel.vaporettoStationText",
+                    "metaKey": "veniceHotel.vaporettoMeta",
+                    "badgeKey": "veniceHotel.recommended",
+                    "origin": "Venezia Santa Lucia railway station",
+                    "destination": "Fondamente Nove, Venezia",
+                    "travelMode": "transit",
+                    "ticketUrl": "https://www.veneziaunica.it/it/acquista-i-biglietti/trasporto-pubblico-a-venezia"
+                },
+                {
+                    "id": "water-taxi",
+                    "titleKey": "veniceHotel.waterTaxi",
+                    "descriptionKey": "veniceHotel.waterTaxiStationText",
+                    "metaKey": "veniceHotel.waterTaxiMeta",
+                    "badgeKey": "veniceHotel.comfortable",
+                    "origin": "Venezia Santa Lucia railway station",
+                    "destination": "Combo Venezia, Campo dei Gesuiti 4878, Venezia",
+                    "travelMode": "transit",
+                    "infoUrl": "https://www.venicewatertaxi.it/"
+                }
+            ]
+        },
+        {
+            "id": "roma",
+            "labelKey": "veniceHotel.arrivalRoma",
+            "subLabel": "BUS / AUTO",
+            "options": [
+                {
+                    "id": "walk",
+                    "titleKey": "veniceHotel.walk",
+                    "descriptionKey": "veniceHotel.walkRomaText",
+                    "metaKey": "veniceHotel.walkRomaMeta",
+                    "badgeKey": "veniceHotel.free",
+                    "origin": "Piazzale Roma, Venezia",
+                    "destination": "Combo Venezia, Campo dei Gesuiti 4878, Venezia",
+                    "travelMode": "walking"
+                },
+                {
+                    "id": "vaporetto",
+                    "titleKey": "veniceHotel.vaporetto",
+                    "descriptionKey": "veniceHotel.vaporettoRomaText",
+                    "metaKey": "veniceHotel.vaporettoMeta",
+                    "badgeKey": "veniceHotel.recommended",
+                    "origin": "Piazzale Roma, Venezia",
+                    "destination": "Fondamente Nove, Venezia",
+                    "travelMode": "transit",
+                    "ticketUrl": "https://www.veneziaunica.it/it/acquista-i-biglietti/trasporto-pubblico-a-venezia"
+                },
+                {
+                    "id": "water-taxi",
+                    "titleKey": "veniceHotel.waterTaxi",
+                    "descriptionKey": "veniceHotel.waterTaxiRomaText",
+                    "metaKey": "veniceHotel.waterTaxiMeta",
+                    "badgeKey": "veniceHotel.comfortable",
+                    "origin": "Piazzale Roma, Venezia",
+                    "destination": "Combo Venezia, Campo dei Gesuiti 4878, Venezia",
+                    "travelMode": "transit",
+                    "infoUrl": "https://www.venicewatertaxi.it/"
+                }
+            ]
+        }
+    ]
+}
