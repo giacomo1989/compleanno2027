@@ -1,0 +1,35 @@
+{
+    "skiSunrise": {
+        "title": "3000 Ski Sunrise",
+        "url": "https://www.bormioski.eu/sciare-alba/",
+        "image": "../images/skipass/ski-sunrise.jpg",
+        "it": {
+            "eyebrow": "ESPERIENZA SPECIALE",
+            "subtitle": "Sciare all'alba · Bormio 3000",
+            "description": "Prime curve sulle piste appena battute, alba a 3.017 m e colazione valtellinese in quota.",
+            "facts": [
+                "🌅 Alba a Cima Bianca · 3.017 m",
+                "⛷️ Discesa fino a Bormio · 1.800 m di dislivello",
+                "🥐 Colazione a buffet in quota",
+                "👥 Solo 100 posti per evento"
+            ],
+            "date": "DATE 2027 DA CONFERMARE",
+            "price": "Quota attuale indicata: 53 €",
+            "button": "SCOPRI L'ESPERIENZA →"
+        },
+        "es": {
+            "eyebrow": "EXPERIENCIA ESPECIAL",
+            "subtitle": "Esquiar al amanecer · Bormio 3000",
+            "description": "Primeros giros sobre pistas recién pisadas, amanecer a 3.017 m y desayuno valtellinés en altura.",
+            "facts": [
+                "🌅 Amanecer en Cima Bianca · 3.017 m",
+                "⛷️ Descenso hasta Bormio · 1.800 m de desnivel",
+                "🥐 Desayuno buffet en altura",
+                "👥 Solo 100 plazas por evento"
+            ],
+            "date": "FECHAS 2027 POR CONFIRMAR",
+            "price": "Precio actualmente indicado: 53 €",
+            "button": "DESCUBRE LA EXPERIENCIA →"
+        }
+    }
+}
