@@ -59,7 +59,7 @@ function renderStops() {
                         <h3>${stop.name}</h3>
                         <div class="stop-location">${location}</div>
                         <div class="stop-actions">
-                            <a href="${mapsSearch(stop.mapsQuery)}" target="_blank" rel="noopener">MAPS ↗</a>
+                            <a href="${mapsSearch(stop.mapsQuery)}" target="_blank" rel="noopener">${active ? "📍 PORTAMI QUI" : "MAPS ↗"}</a>
                             ${isAdmin ? `<button class="secondary admin-live-button" type="button" data-live-stop="${stop.id}">
                                 ${active ? "✓ SIAMO QUI" : "SIAMO QUI"}
                             </button>` : ""}
