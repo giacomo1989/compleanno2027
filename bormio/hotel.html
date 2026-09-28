@@ -4,6 +4,44 @@
   <meta charset="utf-8"/>
   <meta content="width=device-width,initial-scale=1" name="viewport"/>
   <link href="../css/style.css" rel="stylesheet"/>
+ 
+  <style>
+   .hotel-intro {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(280px, .85fr);
+    gap: 28px;
+    align-items: center;
+    margin-bottom: 26px;
+   }
+   .hotel-intro .hotelphoto {
+    width: 100%;
+    height: 100%;
+    min-height: 300px;
+    object-fit: cover;
+    display: block;
+    margin: 0;
+   }
+   .hotel-intro-copy h3 {
+    margin-top: 8px;
+   }
+   .hotel-description {
+    margin: 18px 0 22px;
+    line-height: 1.65;
+   }
+   .hotel-site {
+    display: inline-flex;
+    width: auto;
+   }
+   @media (max-width: 760px) {
+    .hotel-intro {
+     grid-template-columns: 1fr;
+     gap: 20px;
+    }
+    .hotel-intro .hotelphoto {
+     min-height: 240px;
+    }
+   }
+  </style>
  </head>
  <body data-root="..">
   <div class="lang">
@@ -29,15 +67,27 @@
      </h2>
     </div>
     <section class="panel">
-     <div class="smallcap" data-i18n="hotel.ours">
+     <div class="hotel-intro">
+      <div class="hotel-intro-photo">
+       <img class="hotelphoto" src="../images/qc-house-interior.jpeg" alt="QC House"/>
+      </div>
+      <div class="hotel-intro-copy">
+       <div class="smallcap" data-i18n="hotel.ours">
+       </div>
+       <h3>
+        🏨 QC HOUSE
+       </h3>
+       <p class="muted">
+        Via Freita, 7 &middot; Santa Caterina Valfurva (SO)
+       </p>
+       <p class="hotel-description">
+        Chalet in legno immerso nel verde, vicino agli impianti di Santa Caterina Valfurva. Una casa accogliente con ampi spazi comuni, giardino privato, sauna e bagno turco.
+       </p>
+       <a class="action hotel-site" href="https://qchouse.it" target="_blank" rel="noopener">
+        SITO UFFICIALE ↗
+       </a>
+      </div>
      </div>
-     <h3>
-      🏨 QC HOUSE
-     </h3>
-     <p class="muted">
-      Via Freita, 7 &middot; Santa Caterina Valfurva (SO)
-     </p>
-     <img class="hotelphoto" src="../images/qc-house-interior.jpeg"/>
      <div class="stay">
       <div>
        <small data-i18n="hotel.checkin">

@@ -365,11 +365,9 @@
 }
 
 .sunrise-price {
-    font-size: 15px;
+    font-size: 9px;
     line-height: 1.4;
     opacity: 0.58;
-    font-weight: 600;
-    color: red;
 }
 
 .sunrise-action {

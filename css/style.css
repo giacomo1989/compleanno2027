@@ -328,16 +328,27 @@ h1 {
 .hotel {
     min-height: 100svh;
     position: relative;
-    background: #071426;
+    background: #061326;
 }
 
 .hotel::before {
     content: "";
-    position: fixed;
-    inset: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 650px;
+
     background:
-        linear-gradient(#03101f44, #03101f99),
-        url("../images/qc-house-exterior.jpeg") center / cover no-repeat;
+        linear-gradient(
+            180deg,
+            #03101f18 0%,
+            #03101f35 35%,
+            #061326c7 72%,
+            #061326 100%
+        ),
+        url("../images/qc-house-exterior.jpeg") center top / cover no-repeat;
+
     z-index: 0;
 }
 

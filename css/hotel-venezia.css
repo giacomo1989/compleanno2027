@@ -1,0 +1,327 @@
+:root {
+    --vh-wine: #7f1d32;
+    --vh-wine-dark: #5d1224;
+    --vh-cream: #061326;
+    --vh-ink: #f7f2e8;
+    --vh-gold: #c99657;
+}
+
+.venice-hotel-page {
+    min-height: 100svh;
+    background: var(--vh-cream);
+    color: #f7f2e8;
+}
+
+.venice-hotel-hero {
+    position: relative;
+    min-height: 48svh;
+    display: grid;
+    place-items: center;
+    background: url("../images/hotel-venezia/hero.jpg") center 58% / cover no-repeat;
+    overflow: hidden;
+}
+
+.venice-hotel-hero-shade {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(2, 8, 19, .22), rgba(2, 8, 19, .12) 45%, rgba(2, 8, 19, .58));
+}
+
+.venice-hotel-back {
+    position: absolute;
+    z-index: 5;
+    left: 18px;
+    top: 18px;
+    width: 42px;
+    height: 42px;
+    display: grid;
+    place-items: center;
+    border: 1px solid rgba(255,255,255,.45);
+    border-radius: 50%;
+    background: rgba(3,13,31,.62);
+    color: #fff;
+    text-decoration: none;
+    font-size: 23px;
+}
+
+.venice-hotel-hero-copy {
+    position: relative;
+    z-index: 2;
+    width: min(900px, calc(100% - 36px));
+    text-align: center;
+    color: #fff;
+    padding-top: 40px;
+}
+
+.venice-hotel-hero-copy h1 {
+    margin: 18px auto 8px;
+    max-width: 850px;
+    font-size: clamp(42px, 8vw, 82px);
+    line-height: .96;
+    text-transform: none;
+    text-shadow: 0 3px 22px rgba(0,0,0,.34);
+}
+
+.venice-hotel-city {
+    letter-spacing: .48em;
+    font-size: 12px;
+}
+
+.venice-hotel-main {
+    width: min(1100px, calc(100% - 28px));
+    margin: 0 auto;
+    padding: 26px 0 56px;
+}
+
+.venice-hotel-card {
+    margin-bottom: 18px;
+    padding: 22px;
+    border: 1px solid rgba(90,54,42,.14);
+    border-radius: 22px;
+    background: rgba(7, 24, 45, .74);
+    border-color: rgba(255, 216, 155, .20);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, .18);
+}
+
+.wine { color: var(--vh-wine); }
+
+.hotel-overview {
+    display: grid;
+    grid-template-columns: .9fr 1.1fr;
+    gap: 24px;
+    align-items: stretch;
+}
+
+.hotel-copy h2,
+.location-card h2,
+.arrival-card h2 {
+    margin: 8px 0 10px;
+    font-family: Georgia, serif;
+    font-size: clamp(30px, 5vw, 48px);
+    font-weight: 400;
+}
+
+.hotel-address,
+.hotel-description,
+.arrival-heading p,
+.route-note {
+    color: #d7dce4;
+    line-height: 1.55;
+}
+
+.hotel-gallery {
+    display: grid;
+    grid-template-columns: 1.6fr .8fr;
+    gap: 10px;
+    min-height: 300px;
+}
+
+.hotel-gallery img {
+    width: 100%;
+    height: 100%;
+    min-height: 260px;
+    object-fit: cover;
+    border-radius: 16px;
+}
+
+.stay-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 22px;
+}
+
+.stay-grid div {
+    border-top: 1px solid rgba(255,216,155,.22);
+    padding-top: 12px;
+}
+
+.stay-grid small,
+.stay-grid b { display: block; }
+.stay-grid small { color: var(--vh-wine); font-size: 10px; letter-spacing: .08em; margin-bottom: 5px; }
+.stay-grid b { font-size: 13px; }
+
+.section-heading-row,
+.arrival-heading,
+.route-map-head {
+    display: flex;
+    justify-content: space-between;
+    gap: 18px;
+    align-items: flex-end;
+}
+
+.wine-button,
+.route-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 46px;
+    padding: 12px 18px;
+    border-radius: 12px;
+    background: var(--vh-wine);
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.venice-map {
+    overflow: hidden;
+    border-radius: 18px;
+    background: #091525;
+}
+
+.venice-map iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.hotel-map { height: 330px; margin-top: 18px; }
+.route-map { height: 360px; margin-top: 12px; }
+
+.arrival-heading { margin: 6px 0 18px; }
+.arrival-heading p { max-width: 430px; margin: 0 0 8px; }
+
+.arrival-tabs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.arrival-tab {
+    border: 1px solid rgba(127,29,50,.10);
+    border-radius: 13px;
+    background: rgba(255,255,255,.055);
+    color: #f6dfbd;
+    padding: 14px 12px;
+    cursor: pointer;
+    text-align: left;
+}
+
+.arrival-tab strong,
+.arrival-tab small { display: block; }
+.arrival-tab strong { font-size: 12px; }
+.arrival-tab small { margin-top: 3px; opacity: .65; font-size: 9px; }
+.arrival-tab.active { background: var(--vh-wine); color: #fff; }
+
+.transport-options {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 24px;
+}
+
+.transport-option {
+    position: relative;
+    min-height: 188px;
+    border: 1px solid rgba(255,216,155,.18);
+    border-radius: 16px;
+    background: rgba(8, 21, 39, .92);
+    padding: 18px;
+    text-align: left;
+    cursor: pointer;
+    color: #f7f2e8;
+}
+
+.transport-option.active {
+    border-color: #b33a54;
+    box-shadow: 0 0 0 2px rgba(179,58,84,.16);
+}
+
+.transport-option .option-icon { font-size: 26px; }
+.transport-option h3 { margin: 12px 0 7px; font-family: Georgia, serif; font-size: 23px; }
+.transport-option p { margin: 0; color: #d3d9e1; font-size: 13px; line-height: 1.45; }
+.transport-option .option-meta { display: block; margin-top: 14px; color: var(--vh-wine); font-size: 11px; font-weight: 700; }
+.option-badge { position: absolute; top: 12px; right: 12px; background: var(--vh-wine); color: #fff; border-radius: 99px; padding: 5px 8px; font-size: 8px; font-weight: 700; }
+
+.route-map-head { margin-top: 4px; }
+.route-map-head strong { display: block; margin-top: 5px; }
+.route-map-head > span { color: var(--vh-wine); font-size: 12px; font-weight: 700; }
+.route-action { width: 100%; margin-top: 10px; }
+.route-note { margin: 10px 2px 0; font-size: 11px; text-align: center; }
+
+@media (max-width: 720px) {
+    .venice-hotel-hero { min-height: 42svh; }
+    .venice-hotel-main { width: min(100% - 20px, 600px); padding-top: 12px; }
+    .venice-hotel-card { padding: 16px; border-radius: 18px; }
+    .hotel-overview { grid-template-columns: 1fr; gap: 16px; }
+    .hotel-gallery { min-height: 220px; grid-template-columns: 1.45fr .8fr; }
+    .hotel-gallery img { min-height: 210px; }
+    .section-heading-row,
+    .arrival-heading { align-items: flex-start; flex-direction: column; }
+    .wine-button { width: 100%; }
+    .arrival-tabs { grid-template-columns: 1fr; }
+    .arrival-tab { text-align: center; }
+    .transport-options { grid-template-columns: 1fr; }
+    .transport-option { min-height: 0; }
+    .hotel-map { height: 280px; }
+    .route-map { height: 310px; }
+    .route-map-head { align-items: flex-start; flex-direction: column; }
+}
+
+.hotel-site-link {
+    display: inline-flex;
+    margin: -4px 0 14px;
+    color: var(--vh-gold);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .06em;
+    text-decoration: none;
+}
+
+.hotel-site-link:hover { text-decoration: underline; }
+
+.option-actions {
+    display: grid;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.option-primary-actions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+}
+
+.option-primary-actions .option-route-link:only-child {
+    grid-column: 1 / -1;
+}
+
+.option-route-link,
+.option-info-link,
+.option-ticket-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    padding: 10px 12px;
+    border-radius: 10px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .03em;
+}
+
+.option-route-link {
+    border: 1px solid rgba(179,58,84,.72);
+    background: rgba(179,58,84,.12);
+    color: #f1b8c4;
+}
+
+.option-info-link {
+    border: 1px solid rgba(255,255,255,.18);
+    background: rgba(255,255,255,.05);
+    color: rgba(255,255,255,.82);
+}
+
+.option-ticket-link {
+    width: 100%;
+    border: 1px solid rgba(201,150,87,.72);
+    background: rgba(201,150,87,.10);
+    color: #f3d8ad;
+}
