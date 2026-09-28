@@ -174,6 +174,12 @@
     border-color: rgba(178, 62, 62, .75);
 }
 
+.stop.is-live-stop .stop-actions a {
+    background: rgba(178, 62, 62, .16);
+    color: #e8aaaa;
+    border-color: rgba(178, 62, 62, .85);
+}
+
 .admin-access {
     margin-top: 34px;
     text-align: center;
