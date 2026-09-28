@@ -1,0 +1,22 @@
+{
+    "cards": [
+        {"id":"hotel","phone":"+390415286103","displayPhone":"+39 041 528 6103","image":"images/numeri-utili-venezia/hotel.jpg"},
+        {"id":"waterTaxi","phone":"+390415229040","displayPhone":"+39 041 522 9040","image":"images/numeri-utili-venezia/water-taxi.jpg"},
+        {"id":"roadTaxi","phone":"+390415964","displayPhone":"+39 041 5964","image":"images/numeri-utili-venezia/taxi.jpg"},
+        {"id":"coast","phone":"1530","displayPhone":"1530","image":"images/numeri-utili-venezia/mare.jpg"}
+    ],
+    "languages": {
+        "it": {"cards": {
+            "hotel":{"kicker":"Hotel","title":"Combo Venezia","description":"Campo dei Gesuiti · Cannaregio 4878 · Reception 24/7","call":"Chiama hotel"},
+            "waterTaxi":{"kicker":"Water taxi","title":"Venice Water Taxi","description":"Servizio privato 24/7 · aeroporto, stazione e spostamenti in tutta Venezia e isole.","call":"Chiama water taxi"},
+            "roadTaxi":{"kicker":"Taxi terrestre","title":"RadioTaxi Venezia","description":"Servizio taxi autorizzato 24/7 per Mestre, Piazzale Roma, aeroporto e terraferma.","call":"Chiama radiotaxi"},
+            "coast":{"kicker":"Emergenza in mare","title":"Guardia Costiera","description":"Soccorso in mare e nelle acque lagunari.","call":"Chiama 1530"}
+        }},
+        "es": {"cards": {
+            "hotel":{"kicker":"Hotel","title":"Combo Venezia","description":"Campo dei Gesuiti · Cannaregio 4878 · Recepción 24/7","call":"Llamar al hotel"},
+            "waterTaxi":{"kicker":"Water taxi","title":"Venice Water Taxi","description":"Servicio privado 24/7 · aeropuerto, estación y desplazamientos por Venecia y las islas.","call":"Llamar water taxi"},
+            "roadTaxi":{"kicker":"Taxi terrestre","title":"RadioTaxi Venezia","description":"Servicio de taxi autorizado 24/7 para Mestre, Piazzale Roma, aeropuerto y tierra firme.","call":"Llamar radiotaxi"},
+            "coast":{"kicker":"Emergencia marítima","title":"Guardia Costera","description":"Emergencias en el mar y en las aguas de la laguna.","call":"Llamar 1530"}
+        }}
+    }
+}

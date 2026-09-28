@@ -1,34 +1,32 @@
 <!DOCTYPE html>
-<html>
- <head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width,initial-scale=1" name="viewport"/>
-  <link href="../css/style.css" rel="stylesheet"/>
- </head>
- <body data-root="..">
-  <div class="lang">
-   <button data-lang="it" onclick="setLanguage('it')">
-    IT
-   </button>
-   <button data-lang="es" onclick="setLanguage('es')">
-    ES
-   </button>
-  </div>
-  <section class="placeholder">
-   <main>
-    <a class="back" href="index.html">
-     &larr;
-    </a>
-    <div class="smallcap">
-     VENEZIA
+<html lang="it">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Numeri utili · Venezia</title>
+    <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/numeri-utili-venezia.css" rel="stylesheet">
+</head>
+<body data-root="..">
+    <div class="lang">
+        <button data-lang="it" onclick="setLanguage('it')">IT</button>
+        <button data-lang="es" onclick="setLanguage('es')">ES</button>
     </div>
-    <h2 data-i18n="common.phone">
-    </h2>
-    <div class="panel" data-i18n="placeholder">
-    </div>
-   </main>
-  </section>
-  <script src="../js/i18n.js">
-  </script>
- </body>
+    <section class="vu-page">
+        <header class="vu-top"><a class="back" href="index.html">←</a></header>
+        <main class="vu-main">
+            <section class="vu-hero">
+                <div class="vu-hero-copy"><h1 data-i18n="veniceUseful.title"></h1><div class="smallcap">VENEZIA</div><p data-i18n="veniceUseful.subtitle"></p></div>
+            </section>
+            <section class="vu-emergency">
+                <div><div class="kicker" data-i18n="veniceUseful.emergency"></div><div class="big-number">112</div><p data-i18n="veniceUseful.emergencyNote"></p></div>
+                <div class="services"><span>🛡️ <b data-i18n="veniceUseful.police"></b> <strong>113</strong></span><span>✚ <b data-i18n="veniceUseful.ambulance"></b> <strong>118</strong></span><span>🔥 <b data-i18n="veniceUseful.fire"></b> <strong>115</strong></span></div>
+                <a class="vu-call danger" href="tel:112">☎ <span data-i18n="veniceUseful.call112"></span></a>
+            </section>
+            <section id="veniceUsefulCards" class="vu-grid"></section>
+        </main>
+    </section>
+    <script src="../js/i18n.js"></script>
+    <script src="../js/numeri-utili-venezia.js"></script>
+</body>
 </html>
