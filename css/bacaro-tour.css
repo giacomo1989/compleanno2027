@@ -162,14 +162,16 @@
 }
 
 .stop.is-live-stop .stop-card {
-    border-color: rgba(232,191,122,.92);
-    box-shadow: 0 0 0 1px rgba(232,191,122,.16), 0 18px 42px rgba(0,0,0,.24);
+    border-color: rgba(178, 62, 62, .95);
+    box-shadow:
+        0 0 0 1px rgba(178, 62, 62, .18),
+        0 18px 42px rgba(0, 0, 0, .24);
 }
 
 .stop.is-live-stop .admin-live-button {
-    background: rgba(232,191,122,.14);
-    color: #f3d19a;
-    border-color: rgba(232,191,122,.7);
+    background: rgba(178, 62, 62, .14);
+    color: #e8aaaa;
+    border-color: rgba(178, 62, 62, .75);
 }
 
 .admin-access {
