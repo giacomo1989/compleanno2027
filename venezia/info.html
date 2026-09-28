@@ -4,31 +4,158 @@
   <meta charset="utf-8"/>
   <meta content="width=device-width,initial-scale=1" name="viewport"/>
   <link href="../css/style.css" rel="stylesheet"/>
+  <link href="../css/info-venezia.css" rel="stylesheet"/>
+  <title>Info Pratiche · Venezia</title>
  </head>
  <body data-root="..">
   <div class="lang">
-   <button data-lang="it" onclick="setLanguage('it')">
-    IT
-   </button>
-   <button data-lang="es" onclick="setLanguage('es')">
-    ES
-   </button>
+   <button data-lang="it" onclick="setLanguage('it')">IT</button>
+   <button data-lang="es" onclick="setLanguage('es')">ES</button>
   </div>
-  <section class="placeholder">
-   <main>
-    <a class="back" href="index.html">
-     &larr;
-    </a>
-    <div class="smallcap">
-     VENEZIA
+
+  <main class="vi-page">
+   <section class="vi-hero">
+    <a class="vi-back" href="index.html">←</a>
+    <div class="vi-hero-copy">
+     <div class="smallcap">VENEZIA · 2027</div>
+     <h1 data-i18n="veniceInfo.title"></h1>
+     <p data-i18n="veniceInfo.subtitle"></p>
     </div>
-    <h2 data-i18n="common.info">
-    </h2>
-    <div class="panel" data-i18n="placeholder">
-    </div>
-   </main>
-  </section>
-  <script src="../js/i18n.js">
-  </script>
+   </section>
+
+   <div class="vi-content">
+    <section class="vi-section">
+     <div class="vi-heading">
+      <span class="vi-icon">⛴</span>
+      <div><h2 data-i18n="veniceInfo.transportTitle"></h2><p data-i18n="veniceInfo.transportSub"></p></div>
+     </div>
+     <div class="vi-grid vi-grid-4">
+      <article class="vi-card">
+       <img src="../images/info-venezia/vaporetto.jpg" alt="Vaporetto Venezia"/>
+       <div class="vi-card-body"><h3>ACTV · VAPORETTO</h3><p data-i18n="veniceInfo.actvDesc"></p>
+        <div class="vi-actions">
+         <a class="vi-btn secondary" href="https://www.veneziaunica.it/it/content/trasporti" target="_blank" rel="noopener">INFO</a>
+         <a class="vi-btn" href="https://www.veneziaunica.it/it/content/trasporti" target="_blank" rel="noopener" data-i18n="veniceInfo.buyTicket"></a>
+        </div>
+       </div>
+      </article>
+      <article class="vi-card">
+       <img src="../images/info-venezia/venezia-unica.jpg" alt="Venezia Unica"/>
+       <div class="vi-card-body"><h3>VENEZIA UNICA</h3><p data-i18n="veniceInfo.vuDesc"></p>
+        <div class="vi-actions">
+         <a class="vi-btn secondary" href="https://www.veneziaunica.it/" target="_blank" rel="noopener">INFO</a>
+         <a class="vi-btn" href="https://www.veneziaunica.it/it/content/trasporti" target="_blank" rel="noopener" data-i18n="veniceInfo.buyOnline"></a>
+        </div>
+       </div>
+      </article>
+      <article class="vi-card">
+       <img src="../images/info-venezia/alilaguna.jpg" alt="Alilaguna"/>
+       <div class="vi-card-body"><h3>ALILAGUNA</h3><p data-i18n="veniceInfo.alilagunaDesc"></p>
+        <div class="vi-actions">
+         <a class="vi-btn secondary" href="https://www.alilaguna.it/" target="_blank" rel="noopener">INFO</a>
+         <a class="vi-btn" href="https://www.alilaguna.it/biglietti/tariffe" target="_blank" rel="noopener" data-i18n="veniceInfo.buyTicket"></a>
+        </div>
+       </div>
+      </article>
+      <article class="vi-card">
+       <img src="../images/info-venezia/water-taxi.jpg" alt="Water taxi Venezia"/>
+       <div class="vi-card-body"><h3 data-i18n="veniceInfo.waterTaxi"></h3><p data-i18n="veniceInfo.waterTaxiDesc"></p>
+        <div class="vi-actions">
+         <a class="vi-btn secondary" href="numeri-utili.html" data-i18n="veniceInfo.moreInfo"></a>
+         <a class="vi-btn" href="numeri-utili.html" data-i18n="veniceInfo.book"></a>
+        </div>
+       </div>
+      </article>
+     </div>
+    </section>
+
+    <section class="vi-section">
+     <div class="vi-heading">
+      <span class="vi-icon">🏛</span>
+      <div><h2 data-i18n="veniceInfo.museumsTitle"></h2><p data-i18n="veniceInfo.museumsSub"></p></div>
+     </div>
+     <div class="vi-grid vi-grid-5">
+      <article class="vi-card"><img src="../images/info-venezia/san-marco.jpg" alt="San Marco"/><div class="vi-card-body"><h3>PIAZZA SAN MARCO</h3><p data-i18n="veniceInfo.sanMarcoDesc"></p><div class="vi-actions"><a class="vi-btn secondary" href="https://tickets.basilicasanmarco.it/it/" target="_blank" rel="noopener">INFO</a><a class="vi-btn" href="https://tickets.basilicasanmarco.it/it/prodotti/biglietti/2524" target="_blank" rel="noopener" data-i18n="veniceInfo.officialTickets"></a></div></div></article>
+      <article class="vi-card"><img src="../images/info-venezia/ducale.jpg" alt="Palazzo Ducale"/><div class="vi-card-body"><h3>PALAZZO DUCALE</h3><p data-i18n="veniceInfo.ducaleDesc"></p><div class="vi-actions"><a class="vi-btn secondary" href="https://palazzoducale.visitmuve.it/" target="_blank" rel="noopener">INFO</a><a class="vi-btn" href="https://palazzoducale.visitmuve.it/it/pianifica-la-tua-visita/biglietti/" target="_blank" rel="noopener" data-i18n="veniceInfo.officialTickets"></a></div></div></article>
+      <article class="vi-card"><img src="../images/info-venezia/campanile.jpg" alt="Campanile San Marco"/><div class="vi-card-body"><h3 data-i18n="veniceInfo.campanile"></h3><p data-i18n="veniceInfo.campanileDesc"></p><div class="vi-actions"><a class="vi-btn secondary" href="https://tickets.basilicasanmarco.it/it/" target="_blank" rel="noopener">INFO</a><a class="vi-btn" href="https://tickets.basilicasanmarco.it/it/prodotti/biglietti/2524" target="_blank" rel="noopener" data-i18n="veniceInfo.officialTickets"></a></div></div></article>
+      <article class="vi-card"><img src="../images/info-venezia/correr.jpg" alt="Museo Correr"/><div class="vi-card-body"><h3>MUSEO CORRER</h3><p data-i18n="veniceInfo.correrDesc"></p><div class="vi-actions"><a class="vi-btn secondary" href="https://correr.visitmuve.it/" target="_blank" rel="noopener">INFO</a><a class="vi-btn" href="https://correr.visitmuve.it/it/pianifica-la-tua-visita/biglietti/" target="_blank" rel="noopener" data-i18n="veniceInfo.officialTickets"></a></div></div></article>
+      <article class="vi-card"><img src="../images/info-venezia/guggenheim.jpg" alt="Peggy Guggenheim Collection"/><div class="vi-card-body"><h3>PEGGY GUGGENHEIM</h3><p data-i18n="veniceInfo.guggenheimDesc"></p><div class="vi-actions"><a class="vi-btn secondary" href="https://www.guggenheim-venice.it/it/visita/" target="_blank" rel="noopener">INFO</a><a class="vi-btn" href="https://www.guggenheim-venice.it/it/visita/" target="_blank" rel="noopener" data-i18n="veniceInfo.officialTickets"></a></div></div></article>
+     </div>
+    </section>
+
+
+    <section class="vi-section">
+     <div class="vi-heading">
+      <span class="vi-icon">🔗</span>
+      <div>
+       <h2 data-i18n="veniceInfo.linksTitle"></h2>
+       <p data-i18n="veniceInfo.linksSub"></p>
+      </div>
+     </div>
+
+     <div class="vi-info-links">
+      <article class="vi-wide-card vi-link-card">
+       <div class="vi-wide-inner">
+        <img src="../images/info-venezia/san-marco.jpg" alt="Comune di Venezia"/>
+        <div>
+         <h3 data-i18n="veniceInfo.city"></h3>
+         <p data-i18n="veniceInfo.linkCity"></p>
+         <div class="vi-actions">
+          <a class="vi-btn" href="https://www.comune.venezia.it/" target="_blank" rel="noopener">INFO ↗</a>
+         </div>
+        </div>
+       </div>
+      </article>
+
+      <article class="vi-wide-card vi-link-card">
+       <div class="vi-wide-inner">
+        <img src="../images/info-venezia/ducale.jpg" alt="Contributo di accesso Venezia"/>
+        <div>
+         <h3 data-i18n="veniceInfo.accessFee"></h3>
+         <p data-i18n="veniceInfo.accessFeeDesc"></p>
+         <div class="vi-actions">
+          <a class="vi-btn" href="https://cda.veneziaunica.it/" target="_blank" rel="noopener">INFO ↗</a>
+         </div>
+        </div>
+       </div>
+      </article>
+
+      <article class="vi-wide-card vi-link-card">
+       <div class="vi-wide-inner">
+        <img src="../images/info-venezia/acqua-alta.jpg" alt="Acqua alta Venezia"/>
+        <div>
+         <h3 data-i18n="veniceInfo.tideTitle"></h3>
+         <p data-i18n="veniceInfo.tideDesc"></p>
+         <div class="vi-actions">
+          <a class="vi-btn secondary" href="https://www.comune.venezia.it/it/content/centro-previsioni-e-segnalazioni-maree-beta" target="_blank" rel="noopener">INFO</a>
+          <a class="vi-btn" href="https://www.comune.venezia.it/it/content/centro-previsioni-e-segnalazioni-maree-beta" target="_blank" rel="noopener" data-i18n="veniceInfo.forecast"></a>
+         </div>
+        </div>
+       </div>
+      </article>
+
+      <article class="vi-wide-card vi-link-card">
+       <div class="vi-wide-inner">
+        <img src="../images/info-venezia/muoversi.jpg" alt="Camminare a Venezia"/>
+        <div>
+         <h3 data-i18n="veniceInfo.moveTitle"></h3>
+         <p data-i18n="veniceInfo.moveDesc"></p>
+         <div class="vi-actions">
+          <a class="vi-btn" href="https://www.google.com/maps/search/?api=1&query=Venezia" target="_blank" rel="noopener" data-i18n="veniceInfo.openMaps"></a>
+         </div>
+        </div>
+       </div>
+      </article>
+     </div>
+    </section>
+
+    <section class="vi-emergency">
+     <div><strong>☎</strong><div><h2 data-i18n="veniceInfo.emergencyTitle"></h2><p data-i18n="veniceInfo.emergencyDesc"></p></div></div>
+     <a href="numeri-utili.html" data-i18n="veniceInfo.usefulNumbers"></a>
+    </section>
+   </div>
+  </main>
+
+  <script src="../js/i18n.js"></script>
  </body>
 </html>
