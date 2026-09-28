@@ -163,5 +163,19 @@
     "spa.ciukText": "Direttamente sulle piste: una sosta perfetta per l'ultimo brindisi prima di scendere.",
     "spa.skiantaText": "In centro a Bormio, più orientato a cocktail, aperitivo e dopocena.",
     "spa.clemText": "Pub storico in centro: birre, atmosfera informale e serata che può continuare fino a tardi.",
-    "spa.terrazzaText": "Ristorante e après-ski a Santa Caterina: il riferimento da segnare dopo una giornata sulle piste."
+    "spa.terrazzaText": "Ristorante e après-ski a Santa Caterina: il riferimento da segnare dopo una giornata sulle piste.",
+    "bacaro.title": "Bacaro Tour",
+    "bacaro.subtitle": "Cinque tappe, un solo gruppo, Venezia a piedi.",
+    "bacaro.liveLabel": "LIVE · DOVE SIAMO",
+    "bacaro.liveWaiting": "La posizione del gruppo apparirà qui.",
+    "bacaro.liveNote": "Il LIVE verrà collegato alla posizione del gruppo.",
+    "bacaro.takeMe": "PORTAMI QUI →",
+    "bacaro.stops": "TAPPE",
+    "bacaro.meeting": "RITROVO",
+    "bacaro.finish": "ULTIMA TAPPA",
+    "bacaro.route": "IL PERCORSO",
+    "bacaro.openRoute": "APRI IL PERCORSO SU GOOGLE MAPS ↗",
+    "bacaro.stopsTitle": "Le tappe",
+    "bacaro.noteTitle": "IL PIANO",
+    "bacaro.note": "Gli orari sono indicativi: il LIVE avrà sempre la priorità. Se perdi il gruppo, apri questa pagina e guarda dove siamo."
 }

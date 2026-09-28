@@ -525,3 +525,45 @@ h1 {
     stroke-linecap: round;
     stroke-linejoin: round;
 }
+
+
+/* BACARO TOUR · LIVE PUBBLICO */
+.bacaro-public-live {
+    margin-top: 12px;
+    padding: 16px;
+    border: 1px solid rgba(232,191,122,.42);
+}
+
+.bacaro-public-live[hidden] {
+    display: none;
+}
+
+.bacaro-public-live .smallcap {
+    color: #f3d19a;
+}
+
+.bacaro-public-live strong {
+    display: block;
+    margin-top: 8px;
+    color: #fff;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.25rem;
+    font-weight: 400;
+}
+
+.bacaro-public-live span {
+    display: block;
+    margin-top: 4px;
+    color: rgba(255,255,255,.62);
+    font-size: .76rem;
+}
+
+.bacaro-public-live a {
+    display: inline-block;
+    margin-top: 11px;
+    color: #f1c987;
+    font-size: .68rem;
+    font-weight: 800;
+    letter-spacing: .08em;
+    text-decoration: none;
+}

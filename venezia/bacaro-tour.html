@@ -1,34 +1,105 @@
 <!DOCTYPE html>
-<html>
- <head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width,initial-scale=1" name="viewport"/>
-  <link href="../css/style.css" rel="stylesheet"/>
- </head>
- <body data-root="..">
-  <div class="lang">
-   <button data-lang="it" onclick="setLanguage('it')">
-    IT
-   </button>
-   <button data-lang="es" onclick="setLanguage('es')">
-    ES
-   </button>
-  </div>
-  <section class="placeholder">
-   <main>
-    <a class="back" href="index.html">
-     &larr;
-    </a>
-    <div class="smallcap">
-     VENEZIA
+<html lang="it">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <title>Bacaro Tour · Venezia</title>
+    <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/bacaro-tour.css" rel="stylesheet">
+</head>
+<body data-root=".." class="bacaro-page">
+    <div class="lang">
+        <button data-lang="it" onclick="setLanguage('it')">IT</button>
+        <button data-lang="es" onclick="setLanguage('es')">ES</button>
     </div>
-    <h2 data-i18n="venezia.bacaro">
-    </h2>
-    <div class="panel" data-i18n="placeholder">
-    </div>
-   </main>
-  </section>
-  <script src="../js/i18n.js">
-  </script>
- </body>
+
+    <header class="bacaro-top">
+        <a class="back" href="index.html" aria-label="Torna a Venezia">&larr;</a>
+    </header>
+
+    <main class="bacaro-main">
+        <section class="bacaro-hero">
+            <div class="smallcap">GIACOMO'S BIRTHDAY · VENEZIA</div>
+            <h1 data-i18n="bacaro.title">Bacaro Tour</h1>
+            <p data-i18n="bacaro.subtitle">Cinque tappe, un solo gruppo, Venezia a piedi.</p>
+        </section>
+
+        <section class="group-live" id="groupLive" aria-live="polite">
+            <div class="live-label"><span class="live-dot"></span><span data-i18n="bacaro.liveLabel">LIVE · DOVE SIAMO</span></div>
+            <div class="live-place" id="livePlace" data-i18n="bacaro.liveWaiting">La posizione del gruppo apparirà qui.</div>
+            <div class="live-meta" id="liveMeta" data-i18n="bacaro.liveNote">Il LIVE verrà collegato alla posizione del gruppo.</div>
+            <a class="live-map is-disabled" id="liveMap" href="#" aria-disabled="true" data-i18n="bacaro.takeMe">PORTAMI QUI →</a>
+        </section>
+
+        <section class="tour-summary">
+            <div><strong>5</strong><span data-i18n="bacaro.stops">TAPPE</span></div>
+            <div><strong>12:00</strong><span data-i18n="bacaro.meeting">RITROVO</span></div>
+            <div><strong>16:35+</strong><span data-i18n="bacaro.finish">ULTIMA TAPPA</span></div>
+        </section>
+
+        <section class="route-card">
+            <div class="route-head">
+                <span data-i18n="bacaro.route">IL PERCORSO</span>
+                <span>COMBO → RIALTO</span>
+            </div>
+            <div class="route-line" id="routeLine"></div>
+            
+        <section class="tour-map-section" aria-label="Mappa del Bacaro Tour">
+            <div class="tour-map-card">
+                <img
+                    class="tour-map-image"
+                    src="../images/bacaro-tour/percorso-bacaro-tour.jpg"
+                    alt="Percorso a piedi del Bacaro Tour da Combo verso Cannaregio e Rialto"
+                    loading="lazy"
+                >
+            </div>
+        </section>
+
+        <a class="route-button" id="fullRoute" target="_blank" rel="noopener" data-i18n="bacaro.openRoute">APRI IL PERCORSO SU GOOGLE MAPS ↗</a>
+        </section>
+
+        <section class="stops-section">
+            <div class="section-title">
+                <span>05 FEBBRAIO 2027</span>
+                <h2 data-i18n="bacaro.stopsTitle">Le tappe</h2>
+            </div>
+            <div class="timeline" id="bacaroStops"></div>
+        </section>
+
+        <section class="tour-note">
+            <strong data-i18n="bacaro.noteTitle">IL PIANO</strong>
+            <p data-i18n="bacaro.note">Gli orari sono indicativi: il LIVE avrà sempre la priorità. Se perdi il gruppo, apri questa pagina e guarda dove siamo.</p>
+        </section>
+    
+        <section class="gps-suggestion" id="gpsSuggestion" hidden>
+            <div class="gps-icon">📍</div>
+            <div class="gps-copy">
+                <strong>GPS</strong>
+                <span id="gpsSuggestionText"></span>
+            </div>
+            <div class="gps-actions">
+                <button id="gpsConfirm" type="button">SIAMO QUI</button>
+                <button id="gpsDismiss" class="ghost" type="button">IGNORA</button>
+            </div>
+        </section>
+
+        <section class="admin-access">
+            <button class="admin-trigger" id="adminTrigger" type="button">ADMIN</button>
+            <div class="admin-panel" id="adminPanel" hidden>
+                <form id="adminLoginForm">
+                    <div class="admin-title">ACCESSO ADMIN</div>
+                    <input id="adminEmail" type="email" autocomplete="username" placeholder="Email" required>
+                    <input id="adminPassword" type="password" autocomplete="current-password" placeholder="Password" required>
+                    <button type="submit">ENTRA</button>
+                    <div class="admin-status" id="adminStatus"></div>
+                </form>
+                <button class="admin-logout" id="adminLogout" type="button" hidden>ESCI DALL'ADMIN</button>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="../js/i18n.js"></script>
+    <script type="module" src="../js/bacaro-tour.js"></script>
+</body>
 </html>

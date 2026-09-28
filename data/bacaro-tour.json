@@ -1,0 +1,85 @@
+{
+    "date": "2027-02-05",
+    "stops": [
+        {
+            "id": "combo",
+            "name": "Combo Venezia",
+            "time": "12:00 · MEETING POINT",
+            "location": {
+                "it": "Campo dei Gesuiti · Ritrovo del gruppo",
+                "es": "Campo dei Gesuiti · Punto de encuentro"
+            },
+            "mapsQuery": "Combo Venezia Campo dei Gesuiti",
+            "image": "../images/bacaro-tour/combo.jpg",
+            "real_lat": 45.44314,
+            "real_lng": 12.33877
+            "lat": 41.404611805408535,
+			"lng": 2.1791289810861585
+        },
+        {
+            "id": "vino-vero",
+            "name": "Vino Vero",
+            "time": "12:40 — 13:25",
+            "location": {
+                "it": "Cannaregio 2497 · Fondamenta della Misericordia",
+                "es": "Cannaregio 2497 · Fondamenta della Misericordia"
+            },
+            "mapsQuery": "Vino Vero Cannaregio 2497 Venezia",
+            "image": "../images/bacaro-tour/vino-vero.jpg",
+            "lat": 45.4440594,
+            "lng": 12.3330828
+        },
+        {
+            "id": "al-timon",
+            "name": "Al Timon",
+            "time": "13:35 — 14:20",
+            "location": {
+                "it": "Cannaregio 2754 · Fondamenta dei Ormesini",
+                "es": "Cannaregio 2754 · Fondamenta dei Ormesini"
+            },
+            "mapsQuery": "Al Timon Fondamenta dei Ormesini 2754 Venezia",
+            "image": "../images/bacaro-tour/al-timon.jpg",
+            "lat": 45.4455545,
+            "lng": 12.3284179
+        },
+        {
+            "id": "do-colonne",
+            "name": "Enoteca Do Colonne",
+            "time": "14:35 — 15:20",
+            "location": {
+                "it": "Cannaregio 1814 · via Rio Terà Farsetti / Salizada San Fosca",
+                "es": "Cannaregio 1814 · por Rio Terà Farsetti / Salizada San Fosca"
+            },
+            "mapsQuery": "Enoteca Do Colonne Cannaregio 1814 Venezia",
+            "image": "../images/bacaro-tour/do-colonne.jpg",
+            "lat": 45.4438,
+            "lng": 12.3285
+        },
+        {
+            "id": "bacarando",
+            "name": "Bacarando in Corte dell'Orso",
+            "time": "15:40 — 16:25",
+            "location": {
+                "it": "San Marco 5495 · Corte dell'Orso",
+                "es": "San Marco 5495 · Corte dell'Orso"
+            },
+            "mapsQuery": "Bacarando in Corte dell'Orso Venezia",
+            "image": "../images/bacaro-tour/bacarando.jpg",
+            "lat": 45.43895,
+            "lng": 12.33665
+        },
+        {
+            "id": "bancogiro",
+            "name": "Osteria Bancogiro",
+            "time": "16:35 →",
+            "location": {
+                "it": "San Polo 122 · Campo San Giacometto, Rialto",
+                "es": "San Polo 122 · Campo San Giacometto, Rialto"
+            },
+            "mapsQuery": "Osteria Bancogiro San Polo 122 Venezia",
+            "image": "../images/bacaro-tour/bancogiro.jpg",
+            "lat": 45.438782,
+            "lng": 12.335458
+        }
+    ]
+}
