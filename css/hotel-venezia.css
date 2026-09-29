@@ -272,7 +272,7 @@
     .section-heading-row,
     .arrival-heading { align-items: flex-start; flex-direction: column; }
     .wine-button { width: 100%; }
-    .arrival-tabs { grid-template-columns: 1fr; }
+    /*.arrival-tabs { grid-template-columns: 1fr; }*/
     .arrival-tab { text-align: center; }
     .transport-options { grid-template-columns: 1fr; }
     .transport-option { min-height: 0; }
