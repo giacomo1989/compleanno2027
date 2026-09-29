@@ -1,5 +1,5 @@
 const tripStart = new Date("2027-02-02T15:00:00");
-const tripEnd = new Date("2027-02-09T18:00:00");
+const tripEnd = new Date("2027-02-07T15:00:00");
 
 function localDateKey(date = new Date()) {
     const y = date.getFullYear();
@@ -43,33 +43,46 @@ async function renderLive() {
     if (!live) return;
 
     const lang = localStorage.getItem("gb_lang") || "it";
-    const [programResponse, translationResponse] = await Promise.all([
+    const dateKey = localDateKey();
+    const [bormioResponse, veniceResponse, translationResponse] = await Promise.all([
         fetch("data/programma.json"),
+        fetch("data/programma-venezia.json"),
         fetch(`lang/${lang}.json`)
     ]);
 
-    const program = await programResponse.json();
+    const bormioProgram = await bormioResponse.json();
+    const veniceProgram = await veniceResponse.json();
     const t = await translationResponse.json();
-    const events = program.bormio?.[localDateKey()] || [];
+    const bormioEvents = bormioProgram.bormio?.[dateKey] || [];
+    const veniceEvents = veniceProgram.venezia?.[dateKey] || [];
+    const events = [...bormioEvents, ...veniceEvents];
+
+    const localized = value => {
+        if (typeof value === "string") return value;
+        return value?.[lang] || value?.it || "";
+    };
 
     live.innerHTML = `
         <div class="smallcap">${t["live.today"] || "LIVE"}</div>
         ${events.length ? `
             <div class="live-events">
-                ${events.map(event => `
-                    <div class="live-event">
-                        <b>${event.displayTime || event.time}</b>
-                        <span>
-                            ${event.icon || ""} ${t[event.key] || event.key}
-                            ${event.place ? `<small class="live-place">${event.place}</small>` : ""}
-                        </span>
-                    </div>
-                `).join("")}
+                ${events.map(event => {
+                    const title = event.key ? (t[event.key] || event.key) : localized(event.title);
+                    const displayTime = localized(event.displayTime) || event.time;
+                    return `
+                        <div class="live-event">
+                            <b>${displayTime}</b>
+                            <span>
+                                ${event.icon || ""} ${title}
+                                ${event.place ? `<small class="live-place">${event.place}</small>` : ""}
+                            </span>
+                        </div>
+                    `;
+                }).join("")}
             </div>
         ` : ""}
     `;
 }
-
 updateCountdown();
 setInterval(updateCountdown, 1000);
 document.addEventListener("DOMContentLoaded", renderLive);

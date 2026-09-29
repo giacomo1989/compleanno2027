@@ -24,21 +24,40 @@ async function translations() {
 }
 
 function mapsEmbed(option) {
+    if (option.embedUrl) return option.embedUrl;
+
     const origin = encodeURIComponent(option.origin);
+    const mapDestination = option.mapDestination || option.destination;
     const destinationText = option.waypoint
-        ? `${option.waypoint} to: ${option.destination}`
-        : option.destination;
+        ? `${option.waypoint} to: ${mapDestination}`
+        : mapDestination;
     const destination = encodeURIComponent(destinationText);
     const mode = option.travelMode === "walking" ? "w" : "r";
     return `https://www.google.com/maps?output=embed&saddr=${origin}&daddr=${destination}&dirflg=${mode}`;
 }
 
 function mapsLink(option) {
+    if (option.routeUrl) return option.routeUrl;
+
     const waypoint = option.waypoint ? `&waypoints=${encodeURIComponent(option.waypoint)}` : "";
     return `https://www.google.com/maps/dir/?api=1&origin=${encodeURIComponent(option.origin)}&destination=${encodeURIComponent(option.destination)}&travelmode=${option.travelMode || "transit"}${waypoint}`;
 }
 
-async function renderArrival() {
+function scrollRouteMapIntoView() {
+    if (!window.matchMedia("(max-width: 720px)").matches) return;
+
+    const mapHeading = document.querySelector(".route-map-head");
+    if (!mapHeading) return;
+
+    requestAnimationFrame(() => {
+        mapHeading.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+    });
+}
+
+async function renderArrival(scrollToMap = false) {
     const t = await translations();
     const arrival = hotelVeniceData.arrivals.find(item => item.id === activeArrivalId) || hotelVeniceData.arrivals[0];
     if (!activeOptionId || !arrival.options.some(option => option.id === activeOptionId)) {
@@ -57,7 +76,7 @@ async function renderArrival() {
         button.addEventListener("click", () => {
             activeArrivalId = button.dataset.arrival;
             activeOptionId = null;
-            renderArrival();
+            renderArrival(true);
         });
     });
 
@@ -82,7 +101,7 @@ async function renderArrival() {
     options.querySelectorAll(".transport-option").forEach(card => {
         const selectCard = () => {
             activeOptionId = card.dataset.option;
-            renderArrival();
+            renderArrival(true);
         };
         card.addEventListener("click", event => {
             if (event.target.closest("a")) return;
@@ -99,7 +118,13 @@ async function renderArrival() {
     const selected = arrival.options.find(option => option.id === activeOptionId) || arrival.options[0];
     document.getElementById("selectedRouteLabel").textContent = `${t[arrival.labelKey]} → ${t[selected.titleKey]}`;
     document.getElementById("selectedRouteMeta").textContent = t[selected.metaKey] || "";
-    document.getElementById("veniceRouteMap").src = mapsEmbed(selected);
+    const routeMap = document.getElementById("veniceRouteMap");
+    routeMap.src = mapsEmbed(selected);
+    routeMap.hidden = false;
+
+    if (scrollToMap) {
+        scrollRouteMapIntoView();
+    }
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
