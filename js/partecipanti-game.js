@@ -1,4 +1,5 @@
-const STORAGE_KEY = "gb_whos_who_bormio_v5";
+const CURRENT_TRIP = document.body.dataset.trip || "bormio";
+const STORAGE_KEY = `gb_whos_who_${CURRENT_TRIP}_v5`;
 
 let people = [];
 let translations = {};
@@ -19,7 +20,13 @@ async function loadGameTranslations() {
 }
 
 function t(key, fallback = "") {
-    return translations[key] !== undefined ? translations[key] : fallback;
+    const value = translations[key] !== undefined ? translations[key] : fallback;
+
+    if (key === "game.kicker" && CURRENT_TRIP === "venezia") {
+        return String(value).replace(/BORMIO/gi, "VENEZIA");
+    }
+
+    return value;
 }
 
 function shuffle(values) {
@@ -408,10 +415,13 @@ if (typeof originalSetLanguage === "function") {
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
-    const response = await fetch("../data/whos-who-bormio.json");
+    const response = await fetch("../data/partecipanti.json");
     const data = await response.json();
 
-    people = data.participants || [];
+    people = (data.participants || []).filter(person =>
+        Array.isArray(person.trip) && person.trip.includes(CURRENT_TRIP)
+    );
+
     loadState();
     await loadGameTranslations();
     renderGrid();
