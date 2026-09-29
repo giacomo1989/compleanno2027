@@ -1,0 +1,52 @@
+{
+    "restaurants": [
+        {
+            "id": "wagner",
+            "name": "Ristorante Wagner",
+            "area": "Cannaregio · Ca' Vendramin Calergi",
+            "image": "../images/programma-venezia/wagner.png",
+            "day": "05",
+            "month": "FEB",
+            "meal": {"it": "CENA", "es": "CENA"},
+            "tags": {"it": ["Cucina veneziana", "Atmosfera storica"], "es": ["Cocina veneciana", "Ambiente histórico"]},
+            "description": {
+                "it": "Ristorante raffinato al piano nobile di Ca' Vendramin Calergi, sede storica del Casinò di Venezia. Cucina di tradizione lagunare, specialità di pesce e sale ricche di arte e storia.",
+                "es": "Restaurante refinado en la planta noble de Ca' Vendramin Calergi, sede histórica del Casino de Venecia. Cocina de tradición veneciana, especialidades de pescado y salones llenos de arte e historia."
+            },
+            "map": "https://www.google.com/maps/search/?api=1&query=Ristorante+Wagner+Ca+Vendramin+Calergi+Venezia",
+            "website": "https://www.casinovenezia.it/it/ristorazione/ristorante-wagner"
+        },
+        {
+            "id": "taverna-al-remer",
+            "name": "Taverna al Remer",
+            "area": "Cannaregio · Rialto",
+            "image": "../images/programma-venezia/taverna-al-remer.png",
+            "day": "06",
+            "month": "FEB",
+            "meal": {"it": "CENA", "es": "CENA"},
+            "tags": {"it": ["Cucina veneziana", "Vista Canal Grande"], "es": ["Cocina veneciana", "Vista al Gran Canal"]},
+            "description": {
+                "it": "Taverna veneziana affacciata sul Canal Grande, a pochi passi dal Ponte di Rialto. Piatti della tradizione, pesce fresco e un'atmosfera calda in uno degli angoli più suggestivi della città.",
+                "es": "Taberna veneciana con vistas al Gran Canal, a pocos pasos del Puente de Rialto. Platos tradicionales, pescado fresco y un ambiente cálido en uno de los rincones más especiales de la ciudad."
+            },
+            "map": "https://www.google.com/maps/search/?api=1&query=Taverna+al+Remer+Venezia",
+            "website": "https://tavernaremer.com/"
+        },
+        {
+            "id": "poste-vecie",
+            "name": "Poste Vecie",
+            "area": "Rialto · Mercato del Pesce",
+            "image": "../images/programma-venezia/poste-vecie.png",
+            "day": "07",
+            "month": "FEB",
+            "meal": {"it": "PRANZO", "es": "ALMUERZO"},
+            "tags": {"it": ["Cucina veneziana", "Storico"], "es": ["Cocina veneciana", "Histórico"]},
+            "description": {
+                "it": "Storica trattoria nel cuore del Mercato di Rialto, negli spazi delle antiche poste della Serenissima. Cucina veneziana tradizionale, ingredienti di stagione e pesce legato al vicino mercato.",
+                "es": "Histórica trattoria en el corazón del Mercado de Rialto, en los espacios de las antiguas postas de la Serenissima. Cocina veneciana tradicional, productos de temporada y pescado del cercano mercado."
+            },
+            "map": "https://www.google.com/maps/search/?api=1&query=Antica+Trattoria+Poste+Vecie+Venezia",
+            "website": "https://www.postevecie.com/"
+        }
+    ]
+}

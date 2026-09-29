@@ -1,0 +1,90 @@
+{
+    "venezia": {
+        "2027-02-05": [
+            {
+                "time": "15:00",
+                "icon": "🏨",
+                "title": {"it": "Check-in Hotel Combo", "es": "Check-in Hotel Combo"},
+                "description": {"it": "Arrivo e check-in presso Hotel Combo.", "es": "Llegada y check-in en Hotel Combo."},
+                "place": "Combo Venezia",
+                "image": "../images/programma-venezia/combo.png",
+                "map": "https://www.google.com/maps/search/?api=1&query=Combo+Venezia+Campo+dei+Gesuiti+4878"
+            },
+            {
+                "time": "17:00",
+                "icon": "🏛️",
+                "title": {"it": "Visita San Marco", "es": "Visita a San Marco"},
+                "description": {"it": "Passeggiata e visita di Piazza San Marco.", "es": "Paseo y visita de la Plaza de San Marcos."},
+                "place": "Piazza San Marco",
+                "image": "../images/programma-venezia/san-marco.png",
+                "map": "https://www.google.com/maps/dir/?api=1&origin=Combo+Venezia&destination=Piazza+San+Marco+Venezia&travelmode=walking"
+            },
+            {
+                "time": "21:00",
+                "icon": "🍽️",
+                "title": {"it": "Cena al Ristorante Wagner", "es": "Cena en el Ristorante Wagner"},
+                "description": {"it": "Cena al Ristorante Wagner, all'interno di Ca’ Vendramin Calergi.", "es": "Cena en el Ristorante Wagner, dentro de Ca’ Vendramin Calergi."},
+                "place": "Ristorante Wagner",
+                "image": "../images/programma-venezia/wagner.png",
+                "map": "https://www.google.com/maps/search/?api=1&query=Ristorante+Wagner+Cannaregio+2040+Venezia"
+            },
+            {
+                "time": "",
+                "displayTime": {"it": "DOPO CENA", "es": "DESPUÉS"},
+                "icon": "🎰",
+                "title": {"it": "Casinò di Venezia · Ca’ Vendramin Calergi", "es": "Casino de Venecia · Ca’ Vendramin Calergi"},
+                "description": {"it": "Dopo cena, serata al Casinò di Venezia.", "es": "Después de cenar, noche en el Casino de Venecia."},
+                "place": "Casinò di Venezia · Ca’ Vendramin Calergi",
+                "image": "../images/programma-venezia/casino-ca-vendramin.jpeg",
+                "map": "https://www.google.com/maps/search/?api=1&query=Casino+di+Venezia+Ca+Vendramin+Calergi+Cannaregio+2040"
+            }
+        ],
+        "2027-02-06": [
+            {
+                "time": "12:00",
+                "icon": "🍷",
+                "title": {"it": "Inizio Bacaro Tour", "es": "Inicio del Bacaro Tour"},
+                "description": {"it": "Partenza del Bacaro Tour tra i bacari di Venezia.", "es": "Salida del Bacaro Tour por los bacari de Venecia."},
+                "place": "Bacaro Tour",
+                "image": "../images/programma-venezia/combo.png",
+                "internalLink": "bacaro-tour.html",
+                "action": {"it": "APRI BACARO TOUR", "es": "ABRIR BACARO TOUR"}
+            },
+            {
+                "time": "21:00",
+                "icon": "🍽️",
+                "title": {"it": "Cena alla Taverna al Remer", "es": "Cena en Taverna al Remer"},
+                "description": {"it": "Cena alla Taverna al Remer.", "es": "Cena en Taverna al Remer."},
+                "place": "Taverna al Remer",
+                "image": "../images/programma-venezia/taverna-al-remer.png",
+                "map": "https://www.google.com/maps/search/?api=1&query=Taverna+al+Remer+Cannaregio+5701+Venezia"
+            },
+            {
+                "time": "23:30",
+                "icon": "🎭",
+                "title": {"it": "Festa di Carnevale", "es": "Fiesta de Carnaval"},
+                "description": {"it": "Festa di Carnevale presso Palazzina Grassi.", "es": "Fiesta de Carnaval en Palazzina Grassi."},
+                "place": "Palazzina Grassi",
+                "image": "../images/programma-venezia/palazzina-grassi.jpeg",
+                "map": "https://www.google.com/maps/search/?api=1&query=Palazzina+Grassi+Ramo+Grassi+3247+Venezia"
+            }
+        ],
+        "2027-02-07": [
+            {
+                "time": "11:00",
+                "icon": "🧳",
+                "title": {"it": "Check-out Hotel Combo", "es": "Check-out Hotel Combo"},
+                "description": {"it": "Check-out e fine soggiorno presso Hotel Combo.", "es": "Check-out y fin de la estancia en Hotel Combo."}
+            },
+            {
+                "time": "13:00",
+                "icon": "🍽️",
+                "title": {"it": "Pranzo da Poste Vecie", "es": "Almuerzo en Poste Vecie"},
+                "description": {"it": "Pranzo finale presso Poste Vecie.", "es": "Almuerzo final en Poste Vecie."},
+                "place": "Poste Vecie",
+                "image": "../images/programma-venezia/poste-vecie.png",
+                "map": "https://www.google.com/maps/search/?api=1&query=Poste+Vecie+Venezia"
+            }
+        ]
+    }
+}

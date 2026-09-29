@@ -1,0 +1,277 @@
+/* =========================================================
+   PROGRAMMA · VENEZIA
+   Verticale, coerente con Programma Bormio
+========================================================= */
+
+.venice-program-page,
+.venice-program-page *,
+.venice-program-page *::before,
+.venice-program-page *::after {
+    box-sizing: border-box;
+}
+
+.venice-program-page {
+    min-height: 100svh;
+    background: #061326;
+    color: #fff;
+}
+
+.venice-program-page::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto;
+    height: 56svh;
+    min-height: 470px;
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(6, 19, 38, 0.05) 0%,
+            rgba(6, 19, 38, 0.12) 35%,
+            rgba(6, 19, 38, 0.55) 65%,
+            rgba(6, 19, 38, 0.90) 85%,
+            #061326 100%
+        ),
+        url("../images/programma-venezia/san-marco.png") center 48% / cover no-repeat;
+    pointer-events: none;
+}
+
+.venice-program-main {
+    position: relative;
+    z-index: 2;
+    width: min(820px, calc(100% - 28px));
+    margin: auto;
+    padding: 35px 0 60px;
+}
+
+.venice-program-hero {
+    min-height: 34svh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-bottom: 34px;
+}
+
+.venice-program-hero h1 {
+    margin: 7px 0 12px;
+}
+
+.venice-program-note {
+    margin: 0;
+    opacity: 0.74;
+    font-size: 9px;
+    letter-spacing: 0.16em;
+    line-height: 1.5;
+    text-transform: uppercase;
+}
+
+.venice-day-card {
+    width: 100%;
+    margin-bottom: 14px;
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    background: rgba(5, 19, 37, 0.88);
+    backdrop-filter: blur(12px);
+}
+
+.venice-day-heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 18px;
+}
+
+.venice-day-date {
+    display: flex;
+    align-items: flex-end;
+}
+
+.venice-day-number {
+    color: #fff;
+    font: 42px Georgia, serif;
+    line-height: 0.9;
+}
+
+.venice-day-month {
+    margin-left: 7px;
+    color: #f1cf91;
+    font-size: 10px;
+    letter-spacing: 0.16em;
+}
+
+.venice-day-label {
+    color: rgba(255, 255, 255, 0.66);
+    font-size: 9px;
+    letter-spacing: 0.14em;
+    text-align: right;
+    text-transform: uppercase;
+}
+
+.venice-timeline {
+    position: relative;
+}
+
+.venice-timeline::before {
+    content: "";
+    position: absolute;
+    top: 18px;
+    bottom: 18px;
+    left: 73px;
+    width: 1px;
+    background: linear-gradient(to bottom, #8f2039, rgba(143, 32, 57, 0.20));
+}
+
+.venice-event {
+    display: grid;
+    grid-template-columns: 58px 12px minmax(0, 1fr);
+    gap: 10px;
+    align-items: start;
+    position: relative;
+    padding: 11px 0;
+}
+
+.venice-event time {
+    padding-top: 5px;
+    color: #f1cf91;
+    font: 14px Georgia, serif;
+    line-height: 1.15;
+}
+
+.venice-event-dot {
+    z-index: 1;
+    width: 9px;
+    height: 9px;
+    margin-top: 8px;
+    border: 2px solid #f1cf91;
+    border-radius: 50%;
+    background: #8f2039;
+}
+
+.venice-event-content {
+    min-width: 0;
+    display: flex;
+    gap: 11px;
+}
+
+.venice-event-icon {
+    flex: 0 0 auto;
+    width: 34px;
+    height: 34px;
+    display: grid;
+    place-items: center;
+    margin-top: -4px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #8f2039, #a62845);
+    font-size: 17px;
+}
+
+.venice-event-text {
+    min-width: 0;
+    width: 100%;
+}
+
+.venice-event-text strong {
+    display: block;
+    font: 17px Georgia, serif;
+}
+
+.venice-event-text p {
+    margin: 5px 0 0;
+    color: rgba(255, 255, 255, 0.66);
+    font-size: 11px;
+    line-height: 1.45;
+}
+
+.venice-event-place-row {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    flex-wrap: wrap;
+    margin-top: 8px;
+}
+
+.venice-event-place {
+    min-width: 0;
+    color: rgba(255, 255, 255, 0.78);
+    font-size: 14px;
+    line-height: 1.4;
+    font-weight: 500;
+}
+
+.venice-event-map-button {
+    flex: 0 0 auto;
+    min-height: 34px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 7px 11px;
+    border: 1px solid rgba(166, 40, 69, 0.95);
+    border-radius: 999px;
+    background: linear-gradient(135deg, #8f2039, #a62845);
+    color: #fff;
+    text-decoration: none;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    line-height: 1;
+}
+
+.venice-event-image {
+    display: block;
+    width: 100%;
+    height: 300px;
+    margin-top: 12px;
+    border-radius: 14px;
+    object-fit: cover;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .venice-event-map-button:hover {
+        filter: brightness(1.12);
+    }
+}
+
+@media (max-width: 520px) {
+    .venice-program-page::before {
+        height: 49svh;
+        min-height: 410px;
+    }
+
+    .venice-program-hero {
+        min-height: 30svh;
+        padding-bottom: 28px;
+    }
+
+    .venice-day-card {
+        padding: 17px;
+    }
+
+    .venice-day-label {
+        max-width: 46%;
+    }
+
+    .venice-timeline::before {
+        left: 65px;
+    }
+
+    .venice-event {
+        grid-template-columns: 50px 10px minmax(0, 1fr);
+        gap: 8px;
+    }
+
+    .venice-event-content {
+        gap: 8px;
+    }
+
+    .venice-event-icon {
+        width: 31px;
+        height: 31px;
+        font-size: 15px;
+    }
+
+    .venice-event-image {
+        height: 165px;
+    }
+}

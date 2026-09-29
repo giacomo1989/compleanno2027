@@ -186,6 +186,17 @@
     border: 0;
 }
 
+.route-map-static {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.route-map-static[hidden] {
+    display: none;
+}
+
 .hotel-map { height: 330px; margin-top: 18px; }
 .route-map { height: 360px; margin-top: 12px; }
 
